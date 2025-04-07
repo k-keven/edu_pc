@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-dpr="1">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>理论速成-哈喽交规</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        /* 全局样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #333;
+            background: #f5f7fa;
+        }
+
+        /* 侧边栏样式 */
+        .sidebar {
+            width: 250px;
+            background: #fff;
+            border-radius: 4px;
+            box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+            padding: 20px;
+            position: sticky;
+            top: 100px;
+        }
+
+        .vehicle-selector-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+            text-align: center;
+        }
+
+        .vehicle-list {
+            list-style: none;
+        }
+
+        .vehicle-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s;
+            margin-bottom: 8px;
+        }
+
+        .vehicle-item:hover {
+            background: #f5f7fa;
+        }
+
+        .vehicle-item.active {
+            background: #409EFF;
+            color: #fff;
+        }
+
+        .vehicle-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        /* 主体内容区域 */
+        .main-content {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        /* 头部样式 */
+        .header {
+            background: #fff;
+            box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .logo img {
+            height: 100%;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-contact {
+            margin-right: 30px;
+            color: #666;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* 导航菜单 */
+        .nav-menu {
+            background: #fff;
+            border-radius: 4px;
+            box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+            margin-bottom: 20px;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-item {
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .nav-item:hover {
+            background: #f5f7fa;
+        }
+
+        .nav-item.active {
+            color: #409EFF;
+            border-bottom: 2px solid #409EFF;
+        }
+
+        /* 试题列表 */
+        .question-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .question-item {
+            background: #fff;
+            border-radius: 4px;
+            padding: 20px;
+            box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .question-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,.1);
+        }
+
+        .question-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .question-desc {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-right {
+                margin-top: 10px;
+            }
+
+            .nav-list {
+                flex-direction: column;
+            }
+
+            .question-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部 -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo3.png" alt="哈喽交规">
+            </div>
+            <div class="header-right">
+                <div class="header-contact">
+                    哈喽交规祝您早日拿证,加盟电话 18718889289
+                </div>
+                <div class="user-info">
+                    <span class="user-name"><?php echo $_SESSION['username']; ?></span>
+                    <img class="user-avatar" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAAtCAMAAAAEL7LSAAAAAXNSR0IArs4c6QAAAeBQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////YHepkwAAAJ90Uk5TAAECAwQHCAsNDxETFBUWFxkaHB4fICEiJSYnKy4wMTI1Nj0+QEFFRkdJS0xPUVJUVVdYW15fYWJjamxtbm9yc3Z3eHt8fX5/gIKDhIaIjI6Rk5WXmJmam52eoKKmp6iqq6ytsbKztba3uLy9vr/AwsPExcbHyMnKy8zOz9DR0tPU19jZ2tvc3d7f4OHi4+Tl5ufp6uzt7u/w8vP09fb3ar3ntAAAAhVJREFUOMvN1NdXE1EQwOERNIK9Y6XYjR1BUTR27IAdFFBRBCViEAXBKAoICZuKYjS5y+9f9SEJstnsLo/O09w53zm7d+7cK2KObf7BRTKfWDkMHfOSm6Yg+P/Kjfnkms1m2DzcZpZLhsZu5MJPgMckfZC6Z4QBQJ0wyVaAd3NhL6Cu5vnPtwDt/2AnoDXm3furJKib2dVpBclrFl3q+APxHel8bRR4YdnPb8B4On0KjC+2lGVBUB4RkS0xiO+3OaNLCiIFItIIdNme5nfQK0UWROD3Xlt5Toc3IjvjELCfkA0R0FbIReC2wywNQGKfPIGZI8ahCsMXQ6UBOC8jEC011Av7od5QOapDu/ghtNo4Lq6mW8bCrhA8kyAEihxuQXkURmQQxpxkRRi8EoYfJQ7SnYBu8UG0wkFWAW3SCdN7HOQZ4ILUAY8c5BAkDspu53egJAKT68Q1AfEyW1mtoE9EmoGXtlID/XimreHtNrBWQaBYROR57igbo+AzqMvpJ3gUUncsZQ+gudJ5vYKoxwI+TkGsKrvyAtqpvLApBqn7s8uiADB91+wKu5NA/5xK8QSQ8rtz4MmvAD5DbekUQOL1oWWzpfWVozqQep/7oT4F8Cvira12lx+oOftxUgGoh+Z/qvtJJhLBmUymh2vybXNVi4YxQtcXWvRua8NALKv00AfPcrtpKD32oKWnt6v1yuGcCyt/AeO+FwsCmjUxAAAAAElFTkSuQmCC" alt="用户头像">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主体内容 -->
+    <main class="main-content">
+        <!-- 侧边栏 -->
+        <aside class="sidebar">
+            <div class="vehicle-selector">
+                <h3 class="vehicle-selector-title">车型选择</h3>
+                <ul class="vehicle-list">
+                    <li class="vehicle-item active" data-type="car">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAAtCAMAAAAEL7LSAAAAAXNSR0IArs4c6QAAAeBQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////YHepkwAAAJ90Uk5TAAECAwQHCAsNDxETFBUWFxkaHB4fICEiJSYnKy4wMTI1Nj0+QEFFRkdJS0xPUVJUVVdYW15fYWJjamxtbm9yc3Z3eHt8fX5/gIKDhIaIjI6Rk5WXmJmam52eoKKmp6iqq6ytsbKztba3uLy9vr/AwsPExcbHyMnKy8zOz9DR0tPU19jZ2tvc3d7f4OHi4+Tl5ufp6uzt7u/w8vP09fb3ar3ntAAAAhVJREFUOMvN1NdXE1EQwOERNIK9Y6XYjR1BUTR27IAdFFBRBCViEAXBKAoICZuKYjS5y+9f9SEJstnsLo/O09w53zm7d+7cK2KObf7BRTKfWDkMHfOSm6Yg+P/Kjfnkms1m2DzcZpZLhsZu5MJPgMckfZC6Z4QBQJ0wyVaAd3NhL6Cu5vnPtwDt/2AnoDXm3furJKib2dVpBclrFl3q+APxHel8bRR4YdnPb8B4On0KjC+2lGVBUB4RkS0xiO+3OaNLCiIFItIIdNme5nfQK0UWROD3Xlt5Toc3IjvjELCfkA0R0FbIReC2wywNQGKfPIGZI8ahCsMXQ6UBOC8jEC011Av7od5QOapDu/ghtNo4Lq6mW8bCrhA8kyAEihxuQXkURmQQxpxkRRi8EoYfJQ7SnYBu8UG0wkFWAW3SCdN7HOQZ4ILUAY8c5BAkDspu53egJAKT68Q1AfEyW1mtoE9EmoGXtlID/XimreHtNrBWQaBYROR57igbo+AzqMvpJ3gUUncsZQ+gudJ5vYKoxwI+TkGsKrvyAtqpvLApBqn7s8uiADB91+wKu5NA/5xK8QSQ8rtz4MmvAD5DbekUQOL1oWWzpfWVozqQep/7oT4F8Cvira12lx+oOftxUgGoh+Z/qvtJJhLBmUymh2vybXNVi4YxQtcXWvRua8NALKv00AfPcrtpKD32oKWnt6v1yuGcCyt/AeO+FwsCmjUxAAAAAElFTkSuQmCC" alt="小型汽车" class="vehicle-icon">
+                        小型汽车
+                    </li>
+                    <li class="vehicle-item" data-type="bus">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAAtCAMAAAAEL7LSAAAAAXNSR0IArs4c6QAAAeBQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////YHepkwAAAJ90Uk5TAAECAwQHCAsNDxETFBUWFxkaHB4fICEiJSYnKy4wMTI1Nj0+QEFFRkdJS0xPUVJUVVdYW15fYWJjamxtbm9yc3Z3eHt8fX5/gIKDhIaIjI6Rk5WXmJmam52eoKKmp6iqq6ytsbKztba3uLy9vr/AwsPExcbHyMnKy8zOz9DR0tPU19jZ2tvc3d7f4OHi4+Tl5ufp6uzt7u/w8vP09fb3ar3ntAAAAhVJREFUOMvN1NdXE1EQwOERNIK9Y6XYjR1BUTR27IAdFFBRBCViEAXBKAoICZuKYjS5y+9f9SEJstnsLo/O09w53zm7d+7cK2KObf7BRTKfWDkMHfOSm6Yg+P/Kjfnkms1m2DzcZpZLhsZu5MJPgMckfZC6Z4QBQJ0wyVaAd3NhL6Cu5vnPtwDt/2AnoDXm3furJKib2dVpBclrFl3q+APxHel8bRR4YdnPb8B4On0KjC+2lGVBUB4RkS0xiO+3OaNLCiIFItIIdNme5nfQK0UWROD3Xlt5Toc3IjvjELCfkA0R0FbIReC2wywNQGKfPIGZI8ahCsMXQ6UBOC8jEC011Av7od5QOapDu/ghtNo4Lq6mW8bCrhA8kyAEihxuQXkURmQQxpxkRRi8EoYfJQ7SnYBu8UG0wkFWAW3SCdN7HOQZ4ILUAY8c5BAkDspu53egJAKT68Q1AfEyW1mtoE9EmoGXtlID/XimreHtNrBWQaBYROR57igbo+AzqMvpJ3gUUncsZQ+gudJ5vYKoxwI+TkGsKrvyAtqpvLApBqn7s8uiADB91+wKu5NA/5xK8QSQ8rtz4MmvAD5DbekUQOL1oWWzpfWVozqQep/7oT4F8Cvira12lx+oOftxUgGoh+Z/qvtJJhLBmUymh2vybXNVi4YxQtcXWvRua8NALKv00AfPcrtpKD32oKWnt6v1yuGcCyt/AeO+FwsCmjUxAAAAAElFTkSuQmCC" alt="客车" class="vehicle-icon">
+                        客车
+                    </li>
+                    <li class="vehicle-item" data-type="truck">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAAtCAMAAAAEL7LSAAAAAXNSR0IArs4c6QAAAeBQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////YHepkwAAAJ90Uk5TAAECAwQHCAsNDxETFBUWFxkaHB4fICEiJSYnKy4wMTI1Nj0+QEFFRkdJS0xPUVJUVVdYW15fYWJjamxtbm9yc3Z3eHt8fX5/gIKDhIaIjI6Rk5WXmJmam52eoKKmp6iqq6ytsbKztba3uLy9vr/AwsPExcbHyMnKy8zOz9DR0tPU19jZ2tvc3d7f4OHi4+Tl5ufp6uzt7u/w8vP09fb3ar3ntAAAAhVJREFUOMvN1NdXE1EQwOERNIK9Y6XYjR1BUTR27IAdFFBRBCViEAXBKAoICZuKYjS5y+9f9SEJstnsLo/O09w53zm7d+7cK2KObf7BRTKfWDkMHfOSm6Yg+P/Kjfnkms1m2DzcZpZLhsZu5MJPgMckfZC6Z4QBQJ0wyVaAd3NhL6Cu5vnPtwDt/2AnoDXm3furJKib2dVpBclrFl3q+APxHel8bRR4YdnPb8B4On0KjC+2lGVBUB4RkS0xiO+3OaNLCiIFItIIdNme5nfQK0UWROD3Xlt5Toc3IjvjELCfkA0R0FbIReC2wywNQGKfPIGZI8ahCsMXQ6UBOC8jEC011Av7od5QOapDu/ghtNo4Lq6mW8bCrhA8kyAEihxuQXkURmQQxpxkRRi8EoYfJQ7SnYBu8UG0wkFWAW3SCdN7HOQZ4ILUAY8c5BAkDspu53egJAKT68Q1AfEyW1mtoE9EmoGXtlID/XimreHtNrBWQaBYROR57igbo+AzqMvpJ3gUUncsZQ+gudJ5vYKoxwI+TkGsKrvyAtqpvLApBqn7s8uiADB91+wKu5NA/5xK8QSQ8rtz4MmvAD5DbekUQOL1oWWzpfWVozqQep/7oT4F8Cvira12lx+oOftxUgGoh+Z/qvtJJhLBmUymh2vybXNVi4YxQtcXWvRua8NALKv00AfPcrtpKD32oKWnt6v1yuGcCyt/AeO+FwsCmjUxAAAAAElFTkSuQmCC" alt="货车" class="vehicle-icon">
+                        货车
+                    </li>
+                    <li class="vehicle-item" data-type="motorcycle">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAAtCAMAAAAEL7LSAAAAAXNSR0IArs4c6QAAAeBQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////YHepkwAAAJ90Uk5TAAECAwQHCAsNDxETFBUWFxkaHB4fICEiJSYnKy4wMTI1Nj0+QEFFRkdJS0xPUVJUVVdYW15fYWJjamxtbm9yc3Z3eHt8fX5/gIKDhIaIjI6Rk5WXmJmam52eoKKmp6iqq6ytsbKztba3uLy9vr/AwsPExcbHyMnKy8zOz9DR0tPU19jZ2tvc3d7f4OHi4+Tl5ufp6uzt7u/w8vP09fb3ar3ntAAAAhVJREFUOMvN1NdXE1EQwOERNIK9Y6XYjR1BUTR27IAdFFBRBCViEAXBKAoICZuKYjS5y+9f9SEJstnsLo/O09w53zm7d+7cK2KObf7BRTKfWDkMHfOSm6Yg+P/Kjfnkms1m2DzcZpZLhsZu5MJPgMckfZC6Z4QBQJ0wyVaAd3NhL6Cu5vnPtwDt/2AnoDXm3furJKib2dVpBclrFl3q+APxHel8bRR4YdnPb8B4On0KjC+2lGVBUB4RkS0xiO+3OaNLCiIFItIIdNme5nfQK0UWROD3Xlt5Toc3IjvjELCfkA0R0FbIReC2wywNQGKfPIGZI8ahCsMXQ6UBOC8jEC011Av7od5QOapDu/ghtNo4Lq6mW8bCrhA8kyAEihxuQXkURmQQxpxkRRi8EoYfJQ7SnYBu8UG0wkFWAW3SCdN7HOQZ4ILUAY8c5BAkDspu53egJAKT68Q1AfEyW1mtoE9EmoGXtlID/XimreHtNrBWQaBYROR57igbo+AzqMvpJ3gUUncsZQ+gudJ5vYKoxwI+TkGsKrvyAtqpvLApBqn7s8uiADB91+wKu5NA/5xK8QSQ8rtz4MmvAD5DbekUQOL1oWWzpfWVozqQep/7oT4F8Cvira12lx+oOftxUgGoh+Z/qvtJJhLBmUymh2vybXNVi4YxQtcXWvRua8NALKv00AfPcrtpKD32oKWnt6v1yuGcCyt/AeO+FwsCmjUxAAAAAElFTkSuQmCC" alt="摩托车" class="vehicle-icon">
+                        摩托车
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- 内容区域 -->
+        <div class="content">
+            <!-- 导航菜单 -->
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item active">科目一</li>
+                    <li class="nav-item">科目四</li>
+                    <li class="nav-item">注销恢复</li>
+                    <li class="nav-item">满分学习</li>
+                </ul>
+            </nav>
+
+            <!-- 试题列表 -->
+            <div class="question-list">
+                <div class="question-item" onclick="location.href='./practice.php?id=1&name=科目一必考题一&veh=1&color=333&course=1'">
+                    <h3 class="question-title">科目一必考题一</h3>
+                    <p class="question-desc">包含科目一考试重点题目</p>
+                </div>
+                <div class="question-item" onclick="location.href='./practice.php?id=1&name=科目一必考题二&veh=1&color=333&course=1'">
+                    <h3 class="question-title">科目一必考题二</h3>
+                    <p class="question-desc">包含科目一考试重点题目</p>
+                </div>
+                <div class="question-item" onclick="location.href='./practice.php?id=1&name=科目一必考题三&veh=1&color=333&course=1'">
+                    <h3 class="question-title">科目一必考题三</h3>
+                    <p class="question-desc">包含科目一考试重点题目</p>
+                </div>
+                <div class="question-item" onclick="location.href='./practice.php?id=1&name=科目一必考题四&veh=1&color=333&course=1'">
+                    <h3 class="question-title">科目一必考题四</h3>
+                    <p class="question-desc">包含科目一考试重点题目</p>
+                </div>
+                <div class="question-item" onclick="location.href='./practice.php?id=1&name=科目一必考题五&veh=1&color=333&course=1'">
+                    <h3 class="question-title">科目一必考题五</h3>
+                    <p class="question-desc">包含科目一考试重点题目</p>
+                </div>
+                <div class="question-item" onclick="location.href='./practice.php?id=1&name=科目一必考题六&veh=1&color=333&course=1'">
+                    <h3 class="question-title">科目一必考题六</h3>
+                    <p class="question-desc">包含科目一考试重点题目</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // 导航菜单激活状态
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // 车型选择
+        document.querySelectorAll('.vehicle-item').forEach(item => {
+            item.addEventListener('click', function() {
+                // 移除其他项的激活状态
+                document.querySelectorAll('.vehicle-item').forEach(i => i.classList.remove('active'));
+                // 添加当前项的激活状态
+                this.classList.add('active');
+                // 获取选中的车型类型
+                const vehicleType = this.getAttribute('data-type');
+                console.log('Selected vehicle type:', vehicleType);
+                // 这里可以添加根据车型类型加载不同内容的逻辑
+            });
+        });
+    </script>
+</body>
+</html>

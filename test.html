@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>哈喽交规-测试页面</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "PingFang SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #f5f7fa;
+        }
+        
+        /* 顶部导航栏 */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: #1bb394;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+        
+        .logo img {
+            height: 45px;
+        }
+        
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+        
+        .user-name {
+            margin-right: 15px;
+            color: white;
+        }
+        
+        /* 侧边栏 */
+        .sidebar {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            bottom: 0;
+            width: 200px;
+            background: #f0f3f4;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            overflow-y: auto;
+            z-index: 99;
+        }
+        
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .menu-item:hover {
+            background-color: rgba(27, 179, 148, 0.1);
+        }
+        
+        .menu-item.active {
+            background-color: rgba(27, 179, 148, 0.15);
+            border-left: 3px solid #1bb394;
+        }
+        
+        .menu-icon {
+            margin-right: 12px;
+            width: 24px;
+            height: 24px;
+        }
+        
+        /* 主内容区 */
+        .main-container {
+            margin-left: 200px;
+            margin-top: 60px;
+            background: #f5f7fa;
+            min-height: calc(100vh - 60px);
+            padding: 15px;
+        }
+        
+        /* 科目区域 */
+        .subject-wrapper {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .subject-nav {
+            display: flex;
+            padding: 15px 20px 0;
+        }
+        
+        .nav-item {
+            width: 50px;
+            height: 45px;
+            text-align: center;
+            line-height: 45px;
+            border-radius: 3px;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        
+        .nav-item.current {
+            background-color: #1bb394;
+            color: white;
+        }
+        
+        .subject-list {
+            padding: 20px;
+        }
+        
+        .list-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        
+        .paper-item {
+            padding: 8px 15px;
+            background: rgba(27, 179, 148, 0.05);
+            border: 1px solid #eee;
+            border-radius: 4px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .paper-item:hover {
+            background: rgba(27, 179, 148, 0.1);
+            border-color: #1bb394;
+        }
+        
+        /* 底部功能区 */
+        .function-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 15px;
+        }
+        
+        .function-item {
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .item-box {
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .item-left {
+            display: flex;
+            align-items: center;
+        }
+        
+        .item-icon {
+            width: 32px;
+            height: 32px;
+            margin-right: 10px;
+        }
+        
+        .switch-btn {
+            background: #1bb394;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        /* 占位图标样式 */
+        .placeholder-icon {
+            width: 32px;
+            height: 32px;
+            background-color: #1bb394;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .arrow-icon {
+            width: 10px;
+            height: 15px;
+            border-right: 2px solid #999;
+            border-top: 2px solid #999;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <div class="header">
+        <div class="logo">
+            <!-- 使用占位图标替代原来的logo3.png -->
+            <div style="width:120px; height:45px; background:#fff; border-radius:4px; display:flex; align-items:center; justify-content:center; color:#1bb394; font-weight:bold; font-size:18px;">哈喽交规</div>
+        </div>
+        <div class="slogan">哈喽交规祝您早日拿证,加盟电话 18718889289</div>
+        <div class="user-info">
+            <span class="user-name">202304178</span>
+            <!-- 使用占位图标替代用户头像 -->
+            <div style="width:30px; height:30px; background:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#1bb394; font-weight:bold;">用</div>
+        </div>
+    </div>
+    
+    <!-- 侧边栏 -->
+    <div class="sidebar">
+        <div class="menu-item active">
+            <!-- 使用占位图标替代base64图片 -->
+            <div class="placeholder-icon">小</div>
+            <span>小车</span>
+        </div>
+        <div class="menu-item">
+            <div class="placeholder-icon">客</div>
+            <span>客车</span>
+        </div>
+        <div class="menu-item">
+            <div class="placeholder-icon">货</div>
+            <span>货车</span>
+        </div>
+        <div class="menu-item">
+            <div class="placeholder-icon">摩</div>
+            <span>摩托车</span>
+        </div>
+        <div class="menu-item">
+            <div class="placeholder-icon">三</div>
+            <span>三力测试</span>
+        </div>
+    </div>
+    
+    <!-- 主内容区 -->
+    <div class="main-container">
+        <!-- 科目区域 -->
+        <div class="subject-wrapper">
+            <div class="subject-nav">
+                <div class="nav-item current">科目一</div>
+                <div class="nav-item">科目四</div>
+                <div class="nav-item">注销恢复</div>
+                <div class="nav-item">满分学习</div>
+            </div>
+            <div class="subject-list">
+                <div class="list-row">
+                    <div class="paper-item">科目一必考题一</div>
+                    <div class="paper-item">科目一必考题二</div>
+                    <div class="paper-item">科目一必考题三</div>
+                    <div class="paper-item">科目一必考题四</div>
+                    <div class="paper-item">科目一必考题五</div>
+                    <div class="paper-item">科目一必考题六</div>
+                </div>
+                <div class="list-row">
+                    <div class="paper-item">科目一强化试题一</div>
+                    <div class="paper-item">科目一强化试题二</div>
+                    <div class="paper-item">科目一强化试题三</div>
+                    <div class="paper-item">专用题一</div>
+                    <div class="paper-item">专用题二</div>
+                </div>
+                <div class="list-row">
+                    <div class="paper-item">科目一选做题一</div>
+                    <div class="paper-item">科目一选做题二</div>
+                    <div class="paper-item">科目一选做题三</div>
+                    <div class="paper-item">科目一选做题四</div>
+                    <div class="paper-item">科目一选做题五</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 底部功能区 -->
+        <div class="function-wrapper">
+            <div class="function-item">
+                <div class="item-box">
+                    <div class="item-left">
+                        <!-- 使用占位图标替代base64图片 -->
+                        <div class="placeholder-icon">错</div>
+                        <div>错题记录</div>
+                    </div>
+                    <div class="arrow-icon"></div>
+                </div>
+            </div>
+            
+            <div class="function-item">
+                <div class="item-box" style="width: 60%;">
+                    <div class="item-left">
+                        <div class="placeholder-icon">成</div>
+                        <div>成绩记录</div>
+                    </div>
+                    <div class="arrow-icon"></div>
+                </div>
+                <div style="display: flex; align-items: center; margin-left: 10%; padding: 0 0 15px 0;">
+                    <div class="switch-btn">切换考前冲刺</div>
+                </div>
+            </div>
+            
+            <div class="function-item">
+                <div class="item-box">
+                    <div class="item-left">
+                        <div class="placeholder-icon">更</div>
+                        <div>更多功能</div>
+                    </div>
+                    <div class="arrow-icon"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

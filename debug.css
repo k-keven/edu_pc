@@ -1,0 +1,64 @@
+/* 调试辅助样式 - 帮助查看元素边界 */
+
+/* 主内容区域强制可见 */
+.style_one_main {
+  background-color: #fff !important;
+  border: 2px solid red;
+  min-height: 400px !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* 科目列表区域 */
+.styleone_top_wrap {
+  background-color: #f5fffa !important;
+  border: 2px solid blue;
+  min-height: 200px !important;
+  margin-top: 0 !important;
+}
+
+/* 底部功能区 */
+.styleone_buttom_wrap {
+  background-color: #fff5f5 !important;
+  border: 2px solid green;
+  min-height: 150px !important;
+}
+
+/* 修复可能导致遮挡的元素 */
+.el-scrollbar__wrap {
+  overflow: visible !important;
+}
+
+.el-scrollbar__view {
+  overflow: visible !important;
+}
+
+/* 为所有祖先容器添加可见性 */
+.tgg_wrap_layout,
+.tgg_box_layout,
+.tgg_main_layout,
+.styleone,
+.container,
+.container-main,
+.w100,
+.h100 {
+  visibility: visible !important;
+  opacity: 1 !important;
+  overflow: visible !important;
+}
+
+/* 确保内容显示 */
+.styleone_list_item,
+.styleone_paper {
+  display: block !important;
+  visibility: visible !important;
+  background-color: #e6f7ff !important;
+  margin: 5px !important;
+  padding: 10px !important;
+}
+
+/* 禁用任何可能隐藏内容的样式 */
+* {
+  overflow: visible !important;
+} 

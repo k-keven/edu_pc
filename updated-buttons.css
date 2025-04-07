@@ -1,0 +1,72 @@
+/* 考试题目按钮样式优化 */
+.styleone_paper {
+    padding: 15px 20px !important;
+    border-radius: 10px !important;
+    transition: all 0.3s ease;
+    margin: 10px 12px 10px 0 !important;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    border: 1px solid rgba(27, 179, 148, 0.2);
+    position: relative;
+    overflow: hidden;
+    font-weight: 600;
+    background-color: rgba(27, 179, 148, 0.18) !important;
+    transform: translateZ(0);
+}
+
+.styleone_paper:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: rgba(27, 179, 148, 0.6);
+}
+
+.styleone_paper:hover {
+    background-color: rgba(27, 179, 148, 0.25) !important;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.styleone_paper:active {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.12);
+}
+
+.orange_bg {
+    background-color: rgba(27, 179, 148, 0.18) !important;
+    color: #333 !important;
+    font-weight: 600;
+}
+
+.styleone_paper span {
+    position: relative;
+    z-index: 2;
+    font-size: 16px;
+    color: #333;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.5);
+}
+
+/* 科目导航项美化 */
+.styleone_nav_item {
+    font-weight: bold !important;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08) !important;
+}
+
+.stylenavcur {
+    box-shadow: 0 4px 10px rgba(27, 179, 148, 0.3) !important;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .styleone_paper {
+        padding: 12px 15px !important;
+        margin: 8px 8px 8px 0 !important;
+    }
+    
+    .styleone_paper span {
+        font-size: 14px;
+    }
+} 

@@ -1,0 +1,42 @@
+/* 试题列表样式优化 - 增强版 */
+.styleone_paper {
+    padding: 12px 18px !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease;
+    margin: 8px 10px 8px 0 !important;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    border: 1px solid rgba(27, 179, 148, 0.2);
+    position: relative;
+    overflow: hidden;
+    font-weight: 500;
+    background-color: rgba(27, 179, 148, 0.12) !important;
+}
+
+.styleone_paper:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: rgba(27, 179, 148, 0.5);
+}
+
+.styleone_paper:hover {
+    background-color: rgba(27, 179, 148, 0.2) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+
+.orange_bg {
+    background-color: rgba(27, 179, 148, 0.12) !important;
+    color: #333 !important;
+    font-weight: 500;
+}
+
+.styleone_paper span {
+    position: relative;
+    z-index: 2;
+    font-size: 15px;
+} 
