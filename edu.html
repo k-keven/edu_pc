@@ -127,7 +127,11 @@ if($_SESSION['user_id'] ==''){
         
         /* LOGO颜色调整 */
         .style_one_logo .logo img {
-            filter: hue-rotate(45deg) brightness(1.4) saturate(1.7); /* 修改logo颜色为明亮偏黄色 */
+            filter: contrast(1.5) brightness(1.6) saturate(2) hue-rotate(20deg); /* 调整为亮黄色调 */
+            background-color: #ffff00; /* 添加黄色背景 */
+            border-radius: 8px; /* 轻微圆角 */
+            padding: 3px; /* 增加内边距 */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* 添加阴影效果 */
         }
         
         /* 移除悬停效果 */
