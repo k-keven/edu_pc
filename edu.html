@@ -175,8 +175,8 @@ if($_SESSION['user_id'] ==''){
 
         /* 菜单容器背景美化 */
         .sidebar-container {
-          background: linear-gradient(to bottom, #34495e, #2c3e50);
-          box-shadow: 1px 0 5px rgba(0,0,0,0.15);
+          background: #f2f6fa; /* 更改为浅灰蓝色背景 */
+          box-shadow: 1px 0 5px rgba(0,0,0,0.1);
           border-radius: 0 3px 3px 0;
         }
 
@@ -196,16 +196,16 @@ if($_SESSION['user_id'] ==''){
 
         /* 菜单项悬停效果 */
         .el-menu-item:hover {
-          background: rgba(255,255,255,0.08) !important;
+          background: rgba(200, 230, 255, 0.5) !important;
           transform: translateX(3px);
           box-shadow: 0 2px 5px rgba(0,0,0,0.15);
         }
 
         /* 当前选中的菜单项 */
         .el-menu-item.is-active {
-          background: rgba(27, 179, 148, 0.15) !important;
-          border-left: 3px solid #1bb394 !important;
-          box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+          background: #e6f5ff !important; /* 浅蓝色背景 */
+          border-left: 3px solid #1e90ff !important;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         /* 菜单项内容样式 */
@@ -262,7 +262,7 @@ if($_SESSION['user_id'] ==''){
 
         .el-menu-item:hover .tgg_sider_text,
         .el-menu-item.is-active .tgg_sider_text {
-          color: #a46e0c !important;
+          color: #1e90ff !important;
           font-weight: 600;
           font-size: 18px;
         }
@@ -290,6 +290,12 @@ if($_SESSION['user_id'] ==''){
         /* 移除旧的边框效果 */
         .style_one_logo .logo.text-logo::after {
             display: none;
+        }
+        
+        /* 小车图标特殊样式 - 使其变成深色 */
+        .el-menu-item.is-active .tgg_sider_icon img {
+          filter: brightness(0.1) contrast(1.5); /* 应用深色滤镜 */
+          opacity: 1;
         }
     </style>
     <link href="css/my.css" rel="stylesheet">
@@ -333,10 +339,10 @@ if($_SESSION['user_id'] ==''){
                                                     哈喽交规祝您早日拿证,加盟电话 18718889289
                                                 </div>
                                                 <div data-v-14e2f3dc="" class="style_one_headeruser">
-                                                    <div data-v-14e2f3dc="" class="user-info">
+                                                    <div data-v-14e2f3dc="" class="user-info" style="font-size: 16px;">
                                                         <!-- 在用户名前添加时钟元素 -->
-                                                        <span id="current-time" style="color: #333; font-size: 14px; margin-right: 15px; font-weight: 500;"></span>
-                                                        <span data-v-14e2f3dc="" class="user_name" style="margin-right: 30px;">
+                                                        <span id="current-time" style="color: #f9f9f9; font-size: 16px; margin-right: 15px; font-weight: 500;"></span>
+                                                        <span data-v-14e2f3dc="" class="user_name" style="margin-right: 30px; font-size: 16px;">
                                                             202304178</span> <img data-v-14e2f3dc=""
                                                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAAtCAMAAAAEL7LSAAAAAXNSR0IArs4c6QAAAeBQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////YHepkwAAAJ90Uk5TAAECAwQHCAsNDxETFBUWFxkaHB4fICEiJSYnKy4wMTI1Nj0+QEFFRkdJS0xPUVJUVVdYW15fYWJjamxtbm9yc3Z3eHt8fX5/gIKDhIaIjI6Rk5WXmJmam52eoKKmp6iqq6ytsbKztba3uLy9vr/AwsPExcbHyMnKy8zOz9DR0tPU19jZ2tvc3d7f4OHi4+Tl5ufp6uzt7u/w8vP09fb3ar3ntAAAAhVJREFUOMvN1NdXE1EQwOERNIK9Y6XYjR1BUTR27IAdFFBRBCViEAXBKAoICZuKYjS5y+9f9SEJstnsLo/O09w53zm7d+7cK2KObf7BRTKfWDkMHfOSm6Yg+P/Kjfnkms1m2DzcZpZLhsZu5MJPgMckfZC6Z4QBQJ0wyVaAd3NhL6Cu5vnPtwDt/2AnoDXm3furJKib2dVpBclrFl3q+APxHel8bRR4YdnPb8B4On0KjC+2lGVBUB4RkS0xiO+3OaNLCiIFItIIdNme5nfQK0UWROD3Xlt5Toc3IjvjELCfkA0R0FbIReC2wywNQGKfPIGZI8ahCsMXQ6UBOC8jEC011Av7od5QOapDu/ghtNo4Lq6mW8bCrhA8kyAEihxuQXkURmQQxpxkRRi8EoYfJQ7SnYBu8UG0wkFWAW3SCdN7HOQZ4ILUAY8c5BAkDspu53egJAKT68Q1AfEyW1mtoE9EmoGXtlID/XimreHtNrBWQaBYROR57igbo+AzqMvpJ3gUUncsZQ+gudJ5vYKoxwI+TkGsKrvyAtqpvLApBqn7s8uiADB91+wKu5NA/5xK8QSQ8rtz4MmvAD5DbekUQOL1oWWzpfWVozqQep/7oT4F8Cvira12lx+oOftxUgGoh+Z/qvtJJhLBmUymh2vybXNVi4YxQtcXWvRua8NALKv00AfPcrtpKD32oKWnt6v1yuGcCyt/AeO+FwsCmjUxAAAAAElFTkSuQmCC"
                                                             alt="" style="width: 30px; height: 30px;"> <!----> <!---->
@@ -712,12 +718,18 @@ if($_SESSION['user_id'] ==''){
     // 更新时间的函数
     function updateTime() {
         const now = new Date();
+        const year = now.getFullYear();
+        const month = now.getMonth() + 1;
+        const date = now.getDate();
+        const dayNames = ["日", "一", "二", "三", "四", "五", "六"];
+        const dayOfWeek = dayNames[now.getDay()];
+        
         const hours = String(now.getHours()).padStart(2, '0');
         const minutes = String(now.getMinutes()).padStart(2, '0');
         const seconds = String(now.getSeconds()).padStart(2, '0');
         
-        // 格式化时间为 HH:MM:SS
-        const timeString = `${hours}:${minutes}:${seconds}`;
+        // 格式化时间为 YYYY年MM月DD日 星期X HH:MM:SS
+        const timeString = `${year}年${month}月${date}日 星期${dayOfWeek} ${hours}:${minutes}:${seconds}`;
         
         // 更新时间显示
         document.getElementById('current-time').textContent = timeString;
