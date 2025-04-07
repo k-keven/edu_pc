@@ -128,12 +128,9 @@ if($_SESSION['user_id'] ==''){
         /* LOGO颜色调整 */
         .style_one_logo .logo img {
             filter: hue-rotate(45deg) brightness(1.4) saturate(1.7); /* 修改logo颜色为明亮偏黄色 */
-            transition: filter 0.3s ease-in-out;
         }
         
-        .style_one_logo .logo img:hover {
-            filter: hue-rotate(60deg) brightness(1.5) saturate(1.8); /* 悬停时颜色变化 */
-        }
+        /* 移除悬停效果 */
         
         /* 用户信息区域 */
         .user_name {
