@@ -127,7 +127,7 @@ if($_SESSION['user_id'] ==''){
         
         /* LOGO颜色调整 */
         .style_one_logo .logo img {
-            filter: invert(1) hue-rotate(180deg); /* 反转颜色 */
+            filter: invert(1) sepia(1) saturate(10) hue-rotate(42deg) brightness(1.1); /* 黄色滤镜效果 */
             background-color: #0a3b5c; /* 深蓝色背景 */
             border-radius: 8px; /* 轻微圆角 */
             padding: 5px; /* 增加内边距 */
@@ -271,6 +271,26 @@ if($_SESSION['user_id'] ==''){
         .container-main .sidebar-container {
           display: none !important;
         }
+
+        /* LOGO样式调整为文字 */
+        .style_one_logo .logo.text-logo {
+            color: #ffcc00; /* 明亮的黄色文字 */
+            font-size: 24px;
+            font-weight: bold;
+            padding: 6px 18px;
+            text-align: center;
+            letter-spacing: 2px;
+            min-width: 160px; /* 增加最小宽度 */
+            font-family: "Microsoft YaHei", sans-serif;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            position: relative;
+            display: inline-block;
+        }
+        
+        /* 移除旧的边框效果 */
+        .style_one_logo .logo.text-logo::after {
+            display: none;
+        }
     </style>
     <link href="css/my.css" rel="stylesheet">
     <link href="enhanced-buttons.css" rel="stylesheet">
@@ -297,9 +317,8 @@ if($_SESSION['user_id'] ==''){
                                     <div data-v-14e2f3dc="" class="style_one_header style_one_header_fiexd">
                                         <div data-v-14e2f3dc="" class="style_one_headerlt">
                                             <div data-v-14e2f3dc="" class="style_one_logo" style="margin-top: 0px;">
-                                                <div data-v-14e2f3dc="" class="logo"><img data-v-14e2f3dc=""
-                                                        src="images/logo1.png"
-                                                        class="logo zuo_logo"></div>
+                                                <!-- <div data-v-14e2f3dc="" class="logo text-logo">哈喽交规</div> -->
+                                                 <img src="./images/logo2.png" style="width: 200px;" /> 
                                             </div>
                                         </div>
                                         <div data-v-14e2f3dc="" class="style_one_headerrt">
@@ -314,8 +333,10 @@ if($_SESSION['user_id'] ==''){
                                                     哈喽交规祝您早日拿证,加盟电话 18718889289
                                                 </div>
                                                 <div data-v-14e2f3dc="" class="style_one_headeruser">
-                                                    <div data-v-14e2f3dc="" class="user-info"><span data-v-14e2f3dc=""
-                                                            class="user_name" style="margin-right: 30px;">
+                                                    <div data-v-14e2f3dc="" class="user-info">
+                                                        <!-- 在用户名前添加时钟元素 -->
+                                                        <span id="current-time" style="color: #333; font-size: 14px; margin-right: 15px; font-weight: 500;"></span>
+                                                        <span data-v-14e2f3dc="" class="user_name" style="margin-right: 30px;">
                                                             202304178</span> <img data-v-14e2f3dc=""
                                                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAAtCAMAAAAEL7LSAAAAAXNSR0IArs4c6QAAAeBQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////YHepkwAAAJ90Uk5TAAECAwQHCAsNDxETFBUWFxkaHB4fICEiJSYnKy4wMTI1Nj0+QEFFRkdJS0xPUVJUVVdYW15fYWJjamxtbm9yc3Z3eHt8fX5/gIKDhIaIjI6Rk5WXmJmam52eoKKmp6iqq6ytsbKztba3uLy9vr/AwsPExcbHyMnKy8zOz9DR0tPU19jZ2tvc3d7f4OHi4+Tl5ufp6uzt7u/w8vP09fb3ar3ntAAAAhVJREFUOMvN1NdXE1EQwOERNIK9Y6XYjR1BUTR27IAdFFBRBCViEAXBKAoICZuKYjS5y+9f9SEJstnsLo/O09w53zm7d+7cK2KObf7BRTKfWDkMHfOSm6Yg+P/Kjfnkms1m2DzcZpZLhsZu5MJPgMckfZC6Z4QBQJ0wyVaAd3NhL6Cu5vnPtwDt/2AnoDXm3furJKib2dVpBclrFl3q+APxHel8bRR4YdnPb8B4On0KjC+2lGVBUB4RkS0xiO+3OaNLCiIFItIIdNme5nfQK0UWROD3Xlt5Toc3IjvjELCfkA0R0FbIReC2wywNQGKfPIGZI8ahCsMXQ6UBOC8jEC011Av7od5QOapDu/ghtNo4Lq6mW8bCrhA8kyAEihxuQXkURmQQxpxkRRi8EoYfJQ7SnYBu8UG0wkFWAW3SCdN7HOQZ4ILUAY8c5BAkDspu53egJAKT68Q1AfEyW1mtoE9EmoGXtlID/XimreHtNrBWQaBYROR57igbo+AzqMvpJ3gUUncsZQ+gudJ5vYKoxwI+TkGsKrvyAtqpvLApBqn7s8uiADB91+wKu5NA/5xK8QSQ8rtz4MmvAD5DbekUQOL1oWWzpfWVozqQep/7oT4F8Cvira12lx+oOftxUgGoh+Z/qvtJJhLBmUymh2vybXNVi4YxQtcXWvRua8NALKv00AfPcrtpKD32oKWnt6v1yuGcCyt/AeO+FwsCmjUxAAAAAElFTkSuQmCC"
                                                             alt="" style="width: 30px; height: 30px;"> <!----> <!---->
@@ -338,8 +359,8 @@ if($_SESSION['user_id'] ==''){
                                                             style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
                                                             <div data-v-667f0e36="" class="style_one_sider_item">
                                                                 <div data-v-667f0e36="" class="tgg_sider_icon">
-                                                                    <img data-v-667f0e36="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEMAAAAnCAMAAABjcQUNAAAAAXNSR0IArs4c6QAAAnNQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////elH21QAAANB0Uk5TAAECAwQFBgcICQoLDA0PEBESExQVFhcYGRobHR4fICEiJSYnKCssLS4vMDEyMzQ1ODk6Ozw9P0BBQ0RFR0hJSktMTVBRUlNUVldYW11eX2BhYmNkZWZoamtsbm9zdHV2d3h5en+AgYOEhoeIiYqLjI2PkJGSlZaXmJydn6GjpaanqKmqrK2ur7CxsrO0tba3uLm6u76/wMHCw8TFxsfJy8zNzs/Q0dLT1NXW19na293f4OHi4+Tl5ufp6uzt7u/w8vP09fb3+Pn6+/z9/oVf58YAAAODSURBVEjHpZb9X1NVHMc/d2tT1gZkgYKPmJkRZZRRRgYZqZVYWloJleZKLFSIlJIesMDHLIvWslCUQNSiPVCjLZjTPXPZvZ8/qR8uMAb3jgWf3+653/N+fc85n/P9HiBV92w/7ZOYqrjrzM7FyFSGF3pHqSbp2o6szBD63X9TS0P1d2fEqOyXycC3h96zWq3WOnuE0Y4DVqv1gxMekv7GTCDZX0fIH9cZlS/T/iH692QDgO6Bz+PkzaYMIM+5yIFn5mEaA1jWECJvtyybMY32KNlUCDUGCg+EyPCXM0GqBkjXU0Z1Bgr2B8nIV8vTp3EySjYWQIOBRe8HyUjbinSMTR7S+aRRk4G8t/8lY+eLtRE5Z2Lk4YXQZiD3DR8p2ko0GZv/IZ1lhnQM5OzykeLPD2mlcS5OHsxDWgayd3pJ8ZeH1RlbfOSfjxlmYMCy1UmOdpdPmV1gPW+z2QYTpLfTNkl2l0jpptuZqoHbJOWw29Hd9s6Dd4whyv6SOUuN2CsVStesESSjLXcBQCzjCYlAckmuobGxziUASHbm4v8rq/TDQZKj3+QAJC9YMBvpVrRJpLh3LgwIhSdI2V00Fwb0xW4yUTMnBszNpHR2bgzjS6T82xRG1v3rn1g5P+1O5q5d//gS3VgveZaU/0hhrGn2ySQddUV6DcKd5SdDJONdr1smGE5I5OV8AQAMb7rHO9zVTSbVg1h6MDze+zpWJhl+crBED0C325v0pGOL2oIW1yddLf5aBBgqJMoOXJTJ9kUCUPq7RPbXbaz6ZFAmv1OpEeZXh8l4V82GrccjZPjYPOiKblA6jddEkn277rMcCZIdxXpAKL+U4K3DG8qmqvoHMvjZQgDmaj/lgVJAt7y2Jg+mLxLKAmMyvZXzAUC/z6N176TOtUp9biQDb01kuKB1ZDziyiplqKJHixFpzVeK3ItxhhomGaW6V0mFPasFAMDz17QYsXalD5pfTjBYn2K30tojR2+IDFebAcDUMMzEldaWqTrrIfsqlBM6Tg5vm7bre/xkf5UJyKp1k47NxmkRSz+SOfLTOgFCwSGRib57p0UU2kVy5ELj0d4YOdqk0p0NFddJOfB9fUs/ycC7Kg56pHviHSWfKhFUIiyvJG0YOmZWs3LxuajyP9y8Sqd6XUwbLyslXPbsM2lc5ac/vR691fPxo5rvNyF/2yl3zGvfO/kN8R9cgOvxiwR8ywAAAABJRU5ErkJggg==" alt="">
-                                                                    </div> <span data-v-667f0e36=""
+<img data-v-667f0e36="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEMAAAAnCAMAAABjcQUNAAAAAXNSR0IArs4c6QAAAnNQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////elH21QAAANB0Uk5TAAECAwQFBgcICQoLDA0PEBESExQVFhcYGRobHR4fICEiJSYnKCssLS4vMDEyMzQ1ODk6Ozw9P0BBQ0RFR0hJSktMTVBRUlNUVldYW11eX2BhYmNkZWZoamtsbm9zdHV2d3h5en+AgYOEhoeIiYqLjI2PkJGSlZaXmJydn6GjpaanqKmqrK2ur7CxsrO0tba3uLm6u76/wMHCw8TFxsfJy8zNzs/Q0dLT1NXW19na293f4OHi4+Tl5ufo6err7O3u7/Dx8vP09fb3+Pn6+/z9/oVf58YAAAODSURBVEjHpZb9X1NVHMc/d2tT1gZkgYKPmJkRZZRRRgYZqZVYWloJleZKLFSIlJIesMDHLIvWslCUQNSiPVCjLZjTPXPZvZ8/qR8uMAb3jgWf3+653/N+fc85n/P9HiBV92w/7ZOYqrjrzM7FyFSGF3pHqSbp2o6szBD63X9TS0P1d2fEqOyXycC3h96zWq3WOnuE0Y4DVqv1gxMekv7GTCDZX0fIH9cZlS/T/iH692QDgO6Bz+PkzaYMIM+5yIFn5mEaA1jWECJvtyybMY32KNlUCDUGCg+EyPCXM0GqBkjXU0Z1Bgr2B8nIV8vTp3EySjYWQIOBRe8HyUjbinSMTR7S+aRRk4G8t/8lY+eLtRE5Z2Lk4YXQZiD3DR8p2ko0GZv/IZ1lhnQM5OzykeLPD2mlcS5OHsxDWgayd3pJ8ZeH1RlbfOSfjxlmYMCy1UmOdpdPmV1gPW+z2QYTpLfTNkl2l0jpptuZqoHbJOWw29Hd9s6Dd4whyv6SOUuN2CsVStesESSjLXcBQCzjCYlAckmuobGxziUASHbm4v8rq/TDQZKj3+QAJC9YMBvpVrRJpLh3LgwIhSdI2V00Fwb0xW4yUTMnBszNpHR2bgzjS6T82xRG1v3rn1g5P+1O5q5d//gS3VgveZaU/0hhrGn2ySQddUV6DcKd5SdDJONdr1smGE5I5OV8AQAMb7rHO9zVTSbVg1h6MDze+zpWJhl+crBED0C325v0pGOL2oIW1yddLf5aBBgqJMoOXJTJ9kUCUPq7RPbXbaz6ZFAmv1OpEeZXh8l4V82GrccjZPjYPOiKblA6jddEkn277rMcCZIdxXpAKL+U4K3DG8qmqvoHMvjZQgDmaj/lgVJAt7y2Jg+mLxLKAmMyvZXzAUC/z6N176TOtUp9biQDb01kuKB1ZDziyiplqKJHixFpzVeK3ItxhhomGaW6V0mFPasFAMDz17QYsXalD5pfTjBYn2K30tojR2+IDFebAcDUMMzEldaWqTrrIfsqlBM6Tg5vm7bre/xkf5UJyKp1k47NxmkRSz+SOfLTOgFCwSGRib57p0UU2kVy5ELj0d4YOdqk0p0NFddJOfB9fUs/ycC7Kg56pHviHSWfKhFUIiyvJG0YOmZWs3LxuajyP9y8Sqd6XUwbLyslXPbsM2lc5ac/vR691fPxo5rvNyF/2yl3zGvfO/kN8R9cgOvxiwR8ywAAAABJRU5ErkJggg==" alt="">
+                                                                </div> <span data-v-667f0e36=""
                                                                     class="tgg_sider_text style_title_active">小车 </span>
                                                             </div>
                                                         </div>
@@ -562,6 +583,15 @@ if($_SESSION['user_id'] ==''){
                                                                 </div>
                                                                 <span style="font-size: 15px; color: #333;">错题记录</span>
                                                             </div>
+
+                                                            <div style="display: flex; align-items: center;">
+                                                                <div style="width: 30px; height: 30px; border-radius: 5px; background-color: rgba(46, 204, 113, 0.1); display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                                                                    <span style="color: #2ecc71; font-size: 18px;">✓</span>
+                                                </div>
+                                                                <span style="font-size: 15px; color: #333;">成绩记录</span>
+                                                            </div>
+
+
                                                             <span style="color: #ccc; font-size: 18px;">›</span>
                                                         </div>
                                                         
@@ -603,32 +633,45 @@ if($_SESSION['user_id'] ==''){
                                                     <div style="flex: 1; display: flex; flex-direction: column; width: 33.33%;">
                                                         <!-- 成绩记录 -->
                                                         <div style="background-color: white; margin: 10px; padding: 20px; border-radius: 8px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-                                                            <div style="display: flex; align-items: center;">
-                                                                <div style="width: 30px; height: 30px; border-radius: 5px; background-color: rgba(46, 204, 113, 0.1); display: flex; align-items: center; justify-content: center; margin-right: 15px;">
-                                                                    <span style="color: #2ecc71; font-size: 18px;">✓</span>
-                                                </div>
-                                                                <span style="font-size: 15px; color: #333;">成绩记录</span>
-                                                            </div>
-                                                            <div style="display: flex; align-items: center;">
+                                                            
+                                                            <div style="display: flex; align-items: center; margin-left: 30%;">
                                                                 <span style="color: #ccc; font-size: 18px;">›</span>
-                                                                <div style="margin-left: 20px; background-color: #1bb394; color: white; padding: 8px 12px; border-radius: 20px; font-size: 14px; white-space: nowrap;">切换考前冲刺</div>
+                                                                <div style="margin-left: 10px; background-color: #ff9800; color: white; padding: 6px 10px; border-radius: 20px; font-size: 13px; white-space: nowrap; box-shadow: 0 2px 5px rgba(255,152,0,0.3); transition: all 0.3s ease; cursor: pointer;">
+                                                                    <span style="display: inline-block; transform: scale(0.9);">精选试卷</span>
+                                                                </div>
+                                                                <div style="margin-left: 8px; background-color: #e91e63; color: white; padding: 6px 10px; border-radius: 20px; font-size: 13px; white-space: nowrap; box-shadow: 0 2px 5px rgba(233,30,99,0.3); transition: all 0.3s ease; cursor: pointer;">
+                                                                    <span style="display: inline-block; transform: scale(0.9);">考前急训</span>
+                                                                </div>
+                                                                <div style="margin-left: 8px; background-color: #1bb394; color: white; padding: 6px 10px; border-radius: 20px; font-size: 13px; white-space: nowrap; box-shadow: 0 2px 5px rgba(27,179,148,0.3); transition: all 0.3s ease; cursor: pointer;">切换考前冲刺</div>
                                                             </div>
                                                         </div>
                                                         
                                                         <!-- 字体设置 -->
                                                         <div style="background-color: white; margin: 10px; padding: 15px; border-radius: 8px; display: flex; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); overflow: hidden; white-space: nowrap;">
-                                                            <div style="display: flex; align-items: center; width: 100%; overflow: hidden;">
+                                                            <div style="display: flex; align-items: center; width: 100%; overflow: hidden; margin-left: 30%;">
                                                                 <div style="min-width: 30px; height: 30px; border-radius: 5px; background-color: rgba(142, 68, 173, 0.1); display: flex; align-items: center; justify-content: center; margin-right: 15px; flex-shrink: 0;">
                                                                     <span style="color: #9b59b6; font-size: 18px;">Aa</span>
                                                                 </div>
                                                                 <span style="font-size: 15px; color: #333; margin-right: 10px; flex-shrink: 0;">字号大小</span>
                                                                 <select style="padding: 5px; border: 1px solid #eee; border-radius: 4px; margin-right: 15px; flex-shrink: 1; max-width: 80px;">
                                                                     <option>请选择</option>
+                                                                    <option>16px </option>
+                                                                    <option>20px </option>
+
+                                                                    <option>24px </option>
+
+                                                                    <option> 30px</option>
+
+                                                                    <option> 36px </option>
                                                                 </select>
                                                                 
                                                                 <span style="font-size: 15px; color: #333; margin-right: 10px; margin-left: 5px; flex-shrink: 0;">字体颜色</span>
                                                                 <select style="padding: 5px; border: 1px solid #eee; border-radius: 4px; flex-shrink: 1; max-width: 80px;">
                                                                     <option>请选择</option>
+                                                                    <option>红色</option>
+                                                                    <option>黑色</option>
+
+                                                                    <option>蓝色</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -665,3 +708,25 @@ if($_SESSION['user_id'] ==''){
 </body>
 
 </html>
+<script>
+    // 更新时间的函数
+    function updateTime() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        
+        // 格式化时间为 HH:MM:SS
+        const timeString = `${hours}:${minutes}:${seconds}`;
+        
+        // 更新时间显示
+        document.getElementById('current-time').textContent = timeString;
+    }
+    
+    // 页面加载完成后立即显示时间
+    document.addEventListener('DOMContentLoaded', function() {
+        updateTime();
+        // 设置定时器，每秒更新一次
+        setInterval(updateTime, 1000);
+    });
+</script>
