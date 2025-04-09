@@ -305,6 +305,8 @@ if($_SESSION['user_id'] ==''){
     <!--<script type="text/javascript" charset="utf-8" async="" src="https://pc.ikaos.com.cn/static/js/1_da3deda24d76a1601f63.js"></script>-->
     <!--<script type="text/javascript" charset="utf-8" async="" src="https://pc.ikaos.com.cn/static/js/0_d79a64e3611c2ba788ea.js"></script>-->
     <!--<script type="text/javascript" charset="utf-8" async="" src="https://pc.ikaos.com.cn/static/js/3_2641dbb3bda9b78fafb8.js"></script>-->
+    <script src="./js/jquery-3.7.1.js"></script>
+
 </head>
 
 <body style="font-size: 12px;">
@@ -365,7 +367,7 @@ if($_SESSION['user_id'] ==''){
                                                             style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
                                                             <div data-v-667f0e36="" class="style_one_sider_item">
                                                                 <div data-v-667f0e36="" class="tgg_sider_icon">
-<img data-v-667f0e36="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEMAAAAnCAMAAABjcQUNAAAAAXNSR0IArs4c6QAAAnNQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////elH21QAAANB0Uk5TAAECAwQFBgcICQoLDA0PEBESExQVFhcYGRobHR4fICEiJSYnKCssLS4vMDEyMzQ1ODk6Ozw9P0BBQ0RFR0hJSktMTVBRUlNUVldYW11eX2BhYmNkZWZoamtsbm9zdHV2d3h5en+AgYOEhoeIiYqLjI2PkJGSlZaXmJydn6GjpaanqKmqrK2ur7CxsrO0tba3uLm6u76/wMHCw8TFxsfJy8zNzs/Q0dLT1NXW19na293f4OHi4+Tl5ufo6err7O3u7/Dx8vP09fb3+Pn6+/z9/oVf58YAAAODSURBVEjHpZb9X1NVHMc/d2tT1gZkgYKPmJkRZZRRRgYZqZVYWloJleZKLFSIlJIesMDHLIvWslCUQNSiPVCjLZjTPXPZvZ8/qR8uMAb3jgWf3+653/N+fc85n/P9HiBV92w/7ZOYqrjrzM7FyFSGF3pHqSbp2o6szBD63X9TS0P1d2fEqOyXycC3h96zWq3WOnuE0Y4DVqv1gxMekv7GTCDZX0fIH9cZlS/T/iH692QDgO6Bz+PkzaYMIM+5yIFn5mEaA1jWECJvtyybMY32KNlUCDUGCg+EyPCXM0GqBkjXU0Z1Bgr2B8nIV8vTp3EySjYWQIOBRe8HyUjbinSMTR7S+aRRk4G8t/8lY+eLtRE5Z2Lk4YXQZiD3DR8p2ko0GZv/IZ1lhnQM5OzykeLPD2mlcS5OHsxDWgayd3pJ8ZeH1RlbfOSfjxlmYMCy1UmOdpdPmV1gPW+z2QYTpLfTNkl2l0jpptuZqoHbJOWw29Hd9s6Dd4whyv6SOUuN2CsVStesESSjLXcBQCzjCYlAckmuobGxziUASHbm4v8rq/TDQZKj3+QAJC9YMBvpVrRJpLh3LgwIhSdI2V00Fwb0xW4yUTMnBszNpHR2bgzjS6T82xRG1v3rn1g5P+1O5q5d//gS3VgveZaU/0hhrGn2ySQddUV6DcKd5SdDJONdr1smGE5I5OV8AQAMb7rHO9zVTSbVg1h6MDze+zpWJhl+crBED0C325v0pGOL2oIW1yddLf5aBBgqJMoOXJTJ9kUCUPq7RPbXbaz6ZFAmv1OpEeZXh8l4V82GrccjZPjYPOiKblA6jddEkn277rMcCZIdxXpAKL+U4K3DG8qmqvoHMvjZQgDmaj/lgVJAt7y2Jg+mLxLKAmMyvZXzAUC/z6N176TOtUp9biQDb01kuKB1ZDziyiplqKJHixFpzVeK3ItxhhomGaW6V0mFPasFAMDz17QYsXalD5pfTjBYn2K30tojR2+IDFebAcDUMMzEldaWqTrrIfsqlBM6Tg5vm7bre/xkf5UJyKp1k47NxmkRSz+SOfLTOgFCwSGRib57p0UU2kVy5ELj0d4YOdqk0p0NFddJOfB9fUs/ycC7Kg56pHviHSWfKhFUIiyvJG0YOmZWs3LxuajyP9y8Sqd6XUwbLyslXPbsM2lc5ac/vR691fPxo5rvNyF/2yl3zGvfO/kN8R9cgOvxiwR8ywAAAABJRU5ErkJggg==" alt="">
+<img data-v-667f0e36="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEMAAAAnCAMAAABjcQUNAAAAAXNSR0IArs4c6QAAAnNQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////elH21QAAANB0Uk5TAAECAwQFBgcICQoLDA0PEBESExQVFhcYGRobHR4fICEiJSYnKCssLS4vMDEyMzQ1ODk6Ozw9P0BBQ0RFR0hJSktMTVBRUlNUVldYW11eX2BhYmNkZWZoamtsbm9zdHV2d3h5en+AgYOEhoeIiYqLjI2PkJGSlZaXmJydn6GjpaanqKmqrK2ur7CxsrO0tba3uLm6u76/wMHCw8TFxsfJy8zNzs/Q0dLT1NXW19na293f4OHi4+Tl5ufp6uzt7u/w8vP09fb3+Pn6+/z9/oVf58YAAAODSURBVEjHpZb9X1NVHMc/d2tT1gZkgYKPmJkRZZRRRgYZqZVYWloJleZKLFSIlJIesMDHLIvWslCUQNSiPVCjLZjTPXPZvZ8/qR8uMAb3jgWf3+653/N+fc85n/P9HiBV92w/7ZOYqrjrzM7FyFSGF3pHqSbp2o6szBD63X9TS0P1d2fEqOyXycC3h96zWq3WOnuE0Y4DVqv1gxMekv7GTCDZX0fIH9cZlS/T/iH692QDgO6Bz+PkzaYMIM+5yIFn5mEaA1jWECJvtyybMY32KNlUCDUGCg+EyPCXM0GqBkjXU0Z1Bgr2B8nIV8vTp3EySjYWQIOBRe8HyUjbinSMTR7S+aRRk4G8t/8lY+eLtRE5Z2Lk4YXQZiD3DR8p2ko0GZv/IZ1lhnQM5OzykeLPD2mlcS5OHsxDWgayd3pJ8ZeH1RlbfOSfjxlmYMCy1UmOdpdPmV1gPW+z2QYTpLfTNkl2l0jpptuZqoHbJOWw29Hd9s6Dd4whyv6SOUuN2CsVStesESSjLXcBQCzjCYlAckmuobGxziUASHbm4v8rq/TDQZKj3+QAJC9YMBvpVrRJpLh3LgwIhSdI2V00Fwb0xW4yUTMnBszNpHR2bgzjS6T82xRG1v3rn1g5P+1O5q5d//gS3VgveZaU/0hhrGn2ySQddUV6DcKd5SdDJONdr1smGE5I5OV8AQAMb7rHO9zVTSbVg1h6MDze+zpWJhl+crBED0C325v0pGOL2oIW1yddLf5aBBgqJMoOXJTJ9kUCUPq7RPbXbaz6ZFAmv1OpEeZXh8l4V82GrccjZPjYPOiKblA6jddEkn277rMcCZIdxXpAKL+U4K3DG8qmqvoHMvjZQgDmaj/lgVJAt7y2Jg+mLxLKAmMyvZXzAUC/z6N176TOtUp9biQDb01kuKB1ZDziyiplqKJHixFpzVeK3ItxhhomGaW6V0mFPasFAMDz17QYsXalD5pfTjBYn2K30tojR2+IDFebAcDUMMzEldaWqTrrIfsqlBM6Tg5vm7bre/xkf5UJyKp1k47NxmkRSz+SOfLTOgFCwSGRib57p0UU2kVy5ELj0d4YOdqk0p0NFddJOfB9fUs/ycC7Kg56pHviHSWfKhFUIiyvJG0YOmZWs3LxuajyP9y8Sqd6XUwbLyslXPbsM2lc5ac/vR691fPxo5rvNyF/2yl3zGvfO/kN8R9cgOvxiwR8ywAAAABJRU5ErkJggg==" alt="">
                                                                 </div> <span data-v-667f0e36=""
                                                                     class="tgg_sider_text style_title_active">小车 </span>
                                                             </div>
@@ -711,6 +713,367 @@ if($_SESSION['user_id'] ==''){
     <!--<script type="text/javascript" src="https://pc.ikaos.com.cn/static/js/manifest_5c65e1a2795e5caa624c.js"></script>-->
     <!--<script type="text/javascript" src="https://pc.ikaos.com.cn/static/js/vendor_e738ee143ffc1afbf537.js"></script>-->
     <!--<script type="text/javascript" src="https://pc.ikaos.com.cn/static/js/app_5e726c4be90141cb7bc3.js"></script>-->
+<script> 
+    // 添加jQuery引用（如果页面中还没有）
+    function addJQueryToPage() {
+      // 在HTML文件中添加jQuery引用
+      var script = document.createElement('script');
+      script.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
+      script.type = 'text/javascript';
+      document.getElementsByTagName('head')[0].appendChild(script);
+    }
+    function createCustomDialog() {
+  // 添加弹出框样式
+  var style = `
+  <style>
+    .custom-dialog-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+      display: none;
+      
+      /* 加强居中显示 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .custom-dialog {
+      background-color: #fff;
+      border-radius: 5px;
+      width: 400px;
+      max-width: 90%;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      
+      /* 确保即使在flex布局下也能正确居中 */
+      margin: 0 auto;
+      position: relative;
+      transform: translateY(0);
+      animation: dialogFadeIn 0.3s ease-out;
+    }
+    
+    @keyframes dialogFadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    
+    .custom-dialog-header {
+      padding: 15px 20px;
+      border-bottom: 1px solid #eee;
+      position: relative;
+    }
+    
+    .custom-dialog-title {
+      color: #f00;
+      font-size: 18px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      margin: 0;
+    }
+    
+    .custom-dialog-title:before {
+      content: "";
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background-color: #f93;
+      border-radius: 50%;
+      margin-right: 10px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='white' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 15c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-5h-3v-6h3v6z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 20px;
+    }
+    
+    .custom-dialog-close {
+      position: absolute;
+      top: 12px;
+      right: 15px;
+      cursor: pointer;
+      color: #999;
+      font-size: 24px;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      border-radius: 50%;
+    }
+    
+    .custom-dialog-close:hover {
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    
+    .custom-dialog-body {
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 16px;
+      color: #333;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .custom-dialog-footer {
+      padding: 10px 20px 25px;
+      text-align: center;
+    }
+    
+    .custom-dialog-btn {
+      padding: 8px 30px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: none;
+      font-size: 14px;
+      margin: 0 10px;
+      transition: all 0.3s;
+    }
+    
+    .btn-cancel {
+      background-color: #f5f5f5;
+      color: #333;
+      display: inline-block; /* 允许隐藏 */
+    }
+    
+    .btn-cancel:hover {
+      background-color: #e5e5e5;
+    }
+    
+    .btn-confirm {
+      background-color: #4dabf7;
+      color: white;
+    }
+    
+    .btn-confirm:hover {
+      background-color: #3d8bd7;
+    }
+
+    /* 成功状态 */
+    .custom-dialog-title.success {
+      color: #2ecc71;
+    }
+    
+    .custom-dialog-title.success:before {
+      background-color: #2ecc71;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='white' d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z'/%3E%3C/svg%3E");
+    }
+    
+    /* 失败状态 */
+    .custom-dialog-title.error {
+      color: #e74c3c;
+    }
+    
+    .custom-dialog-title.error:before {
+      background-color: #e74c3c;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='white' d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z'/%3E%3C/svg%3E");
+    }
+    
+    .btn-confirm.success {
+      background-color: #2ecc71;
+    }
+    
+    .btn-confirm.error {
+      background-color: #e74c3c;
+    }
+    
+    /* 单按钮模式样式 */
+    .single-button .btn-cancel {
+      display: none;
+    }
+    
+    .single-button .btn-confirm {
+      min-width: 120px;
+    }
+  </style>`;
+  
+  // 添加弹出框HTML结构
+  var dialogHTML = `
+  <div class="custom-dialog-overlay">
+    <div class="custom-dialog">
+      <div class="custom-dialog-header">
+        <h3 class="custom-dialog-title">提示</h3>
+        <span class="custom-dialog-close">×</span>
+      </div>
+      <div class="custom-dialog-body">
+        <!-- 动态内容将在这里显示 -->
+      </div>
+      <div class="custom-dialog-footer">
+        <button class="custom-dialog-btn btn-cancel">取消</button>
+        <button class="custom-dialog-btn btn-confirm">确定</button>
+      </div>
+    </div>
+  </div>`;
+  
+  // 将样式和结构添加到页面
+  $('head').append(style);
+  $('body').append(dialogHTML);
+  
+  // 定义显示和隐藏函数
+  function showDialog() {
+    $('.custom-dialog-overlay').css('display', 'flex').hide().fadeIn(300);
+  }
+  
+  function hideDialog() {
+    $('.custom-dialog-overlay').fadeOut(300);
+  }
+  
+  // 关闭弹出框的事件处理
+  $('.custom-dialog-close, .btn-cancel').on('click', function() {
+    hideDialog();
+  });
+  
+  // 挂载弹出框API到jQuery
+  $.customDialog = function(options) {
+    var settings = $.extend({
+      title: '提示',
+      content: '',
+      cancelText: '取消',
+      confirmText: '确定',
+      onCancel: function() {},
+      onConfirm: function() {},
+      type: 'default', // 默认、成功、失败
+      singleButton: false // 是否只显示一个按钮
+    }, options);
+    
+    // 恢复默认样式
+    $('.custom-dialog-title').removeClass('success error').text(settings.title);
+    $('.btn-confirm').removeClass('success error');
+    $('.custom-dialog-footer').removeClass('single-button');
+    
+    // 根据类型设置样式
+    if(settings.type === 'success') {
+      $('.custom-dialog-title').addClass('success');
+      $('.btn-confirm').addClass('success');
+    } else if(settings.type === 'error') {
+      $('.custom-dialog-title').addClass('error');
+      $('.btn-confirm').addClass('error');
+    }
+    
+    // 设置单按钮模式
+    if(settings.singleButton) {
+      $('.custom-dialog-footer').addClass('single-button');
+    }
+    
+    // 更新弹出框内容
+    $('.custom-dialog-body').html(settings.content);
+    $('.btn-cancel').text(settings.cancelText);
+    $('.btn-confirm').text(settings.confirmText);
+    
+    // 显示弹出框
+    showDialog();
+    
+    // 绑定按钮事件
+    $('.btn-cancel').off('click').on('click', function() {
+      settings.onCancel();
+      hideDialog();
+    });
+    
+    $('.btn-confirm').off('click').on('click', function() {
+      settings.onConfirm();
+      hideDialog();
+    });
+    
+    // 点击关闭按钮
+    $('.custom-dialog-close').off('click').on('click', function() {
+      settings.onCancel();
+      hideDialog();
+    });
+    
+    // 点击遮罩层关闭(可选)
+    $('.custom-dialog-overlay').off('click').on('click', function(e) {
+      if ($(e.target).hasClass('custom-dialog-overlay')) {
+        settings.onCancel();
+        hideDialog();
+      }
+    });
+  };
+  
+  // 添加成功状态快捷方法 - 使用单按钮模式
+  $.customDialog.success = function(options) {
+    if (typeof options === 'string') {
+      options = { content: options };
+    }
+    
+    return $.customDialog($.extend({
+      title: '成功',
+      type: 'success',
+      confirmText: '确定',
+      singleButton: true
+    }, options));
+  };
+  
+  // 添加失败状态快捷方法 - 使用单按钮模式
+  $.customDialog.error = function(options) {
+    if (typeof options === 'string') {
+      options = { content: options };
+    }
+    
+    return $.customDialog($.extend({
+      title: '错误',
+      type: 'error',
+      confirmText: '确定',
+      singleButton: true
+    }, options));
+  };
+}
+  
+    // 将插件初始化代码添加到页面
+    $(document).ready(function() {
+      // 如果页面中没有jQuery，先添加jQuery
+      if (typeof jQuery === 'undefined') {
+        addJQueryToPage();
+        // 等待jQuery加载完成
+        var checkJQuery = setInterval(function() {
+          if (typeof jQuery !== 'undefined') {
+            clearInterval(checkJQuery);
+            createCustomDialog();
+          }
+        }, 100);
+      } else {
+        createCustomDialog();
+      }
+      
+      // 示例用法 - 为按钮添加点击事件
+      $(document).on('click', '.show-dialog-example', function() {
+        $.customDialog({
+          title: '提示',
+          content: '确定退出登录？',
+          onCancel: function() {
+            console.log('用户取消了操作');
+          },
+          onConfirm: function() {
+            console.log('用户确认了操作');
+            // 这里可以添加退出登录的逻辑
+            // location.href = 'logout.php';
+          }
+        });
+      });
+
+
+// 成功提示（单按钮）
+$.customDialog.success('操作已成功完成！');
+
+// 失败提示（单按钮）
+$.customDialog.error('操作执行失败，请重试！');
+
+// 标准确认框（双按钮）
+// $.customDialog({
+//   title: '确认',
+//   content: '是否确认删除该记录？',
+//   onConfirm: function() {
+//     // 删除操作
+//   }
+// });
+
+    });
+</script>
 </body>
 
 </html>
