@@ -341,7 +341,7 @@ if($_SESSION['user_id'] ==''){
                                                         class="list"
                                                         style="height: 30px; margin-top: 3px; display: none;"></div>
                                                 <div data-v-14e2f3dc="" class="style_one_headericons" style='margin-left:90px'>
-                                                    哈喽交规 ， 加盟电话 18202058117
+                                                    哈喽交规祝您早日拿证,加盟电话 18718889289
                                                 </div>
                                                 <div data-v-14e2f3dc="" class="style_one_headeruser">
                                                     <div data-v-14e2f3dc="" class="user-info" style="font-size: 16px;">
@@ -364,20 +364,20 @@ if($_SESSION['user_id'] ==''){
                                             <div class="el-scrollbar__view">
                                                 <ul data-v-667f0e36="" role="menubar" class="el-menu-vertical el-menu">
                                                     <li data-v-667f0e36="" role="menuitem" tabindex="-1"
-                                                        class="el-menu-item is-active" unique-opened="true"
+                                                        class="el-menu-item" unique-opened="true"
                                                         style="padding-left: 20px;"><!---->
-                                                        <div data-v-667f0e36="" class="tgg_sider_item style_one_sider"
+                                                        <div  onclick="location.href='bus.php'" data-v-667f0e36="" class="tgg_sider_item style_one_sider"
                                                             style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
                                                             <div data-v-667f0e36="" class="style_one_sider_item">
                                                                 <div data-v-667f0e36="" class="tgg_sider_icon">
 <img data-v-667f0e36="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEMAAAAnCAMAAABjcQUNAAAAAXNSR0IArs4c6QAAAnNQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////elH21QAAANB0Uk5TAAECAwQFBgcICQoLDA0PEBESExQVFhcYGRobHR4fICEiJSYnKCssLS4vMDEyMzQ1ODk6Ozw9P0BBQ0RFR0hJSktMTVBRUlNUVldYW11eX2BhYmNkZWZoamtsbm9zdHV2d3h5en+AgYOEhoeIiYqLjI2PkJGSlZaXmJydn6GjpaanqKmqrK2ur7CxsrO0tba3uLm6u76/wMHCw8TFxsfJy8zNzs/Q0dLT1NXW19na293f4OHi4+Tl5ufo6err7O3u7/Dx8vP09fb3+Pn6+/z9/oVf58YAAAODSURBVEjHpZb9X1NVHMc/d2tT1gZkgYKPmJkRZZRRRgYZqZVYWloJleZKLFSIlJIesMDHLIvWslCUQNSiPVCjLZjTPXPZvZ8/qR8uMAb3jgWf3+653/N+fc85n/P9HiBV92w/7ZOYqrjrzM7FyFSGF3pHqSbp2o6szBD63X9TS0P1d2fEqOyXycC3h96zWq3WOnuE0Y4DVqv1gxMekv7GTCDZX0fIH9cZlS/T/iH692QDgO6Bz+PkzaYMIM+5yIFn5mEaA1jWECJvtyybMY32KNlUCDUGCg+EyPCXM0GqBkjXU0Z1Bgr2B8nIV8vTp3EySjYWQIOBRe8HyUjbinSMTR7S+aRRk4G8t/8lY+eLtRE5Z2Lk4YXQZiD3DR8p2ko0GZv/IZ1lhnQM5OzykeLPD2mlcS5OHsxDWgayd3pJ8ZeH1RlbfOSfjxlmYMCy1UmOdpdPmV1gPW+z2QYTpLfTNkl2l0jpptuZqoHbJOWw29Hd9s6Dd4whyv6SOUuN2CsVStesESSjLXcBQCzjCYlAckmuobGxziUASHbm4v8rq/TDQZKj3+QAJC9YMBvpVrRJpLh3LgwIhSdI2V00Fwb0xW4yUTMnBszNpHR2bgzjS6T82xRG1v3rn1g5P+1O5q5d//gS3VgveZaU/0hhrGn2ySQddUV6DcKd5SdDJONdr1smGE5I5OV8AQAMb7rHO9zVTSbVg1h6MDze+zpWJhl+crBED0C325v0pGOL2oIW1yddLf5aBBgqJMoOXJTJ9kUCUPq7RPbXbaz6ZFAmv1OpEeZXh8l4V82GrccjZPjYPOiKblA6jddEkn277rMcCZIdxXpAKL+U4K3DG8qmqvoHMvjZQgDmaj/lgVJAt7y2Jg+mLxLKAmMyvZXzAUC/z6N176TOtUp9biQDb01kuKB1ZDziyiplqKJHixFpzVeK3ItxhhomGaW6V0mFPasFAMDz17QYsXalD5pfTjBYn2K30tojR2+IDFebAcDUMMzEldaWqTrrIfsqlBM6Tg5vm7bre/xkf5UJyKp1k47NxmkRSz+SOfLTOgFCwSGRib57p0UU2kVy5ELj0d4YOdqk0p0NFddJOfB9fUs/ycC7Kg56pHviHSWfKhFUIiyvJG0YOmZWs3LxuajyP9y8Sqd6XUwbLyslXPbsM2lc5ac/vR691fPxo5rvNyF/2yl3zGvfO/kN8R9cgOvxiwR8ywAAAABJRU5ErkJggg==" alt="">
                                                                 </div> <span data-v-667f0e36=""
-                                                                    class="tgg_sider_text style_title_active">小车 </span>
+                                                                    class="tgg_sider_text ">小车 </span>
                                                             </div>
                                                         </div>
                                                     </li>
                                                     <li data-v-667f0e36="" role="menuitem" tabindex="-1"
-                                                        class="el-menu-item" unique-opened="true"
+                                                        class="el-menu-item  is-active" unique-opened="true"
                                                         style="padding-left: 20px;"><!---->
                                                         <div  onclick="location.href='bus.php'" data-v-667f0e36="" class="tgg_sider_item style_one_sider"
                                                             style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
@@ -386,7 +386,7 @@ if($_SESSION['user_id'] ==''){
                                                                         data-v-667f0e36=""
                                                                         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEQAAAAlCAYAAAD7u09NAAAAAXNSR0IArs4c6QAABldJREFUaN7lWntsFEUYXygKioIiaFQMghhfQCoGo6gYjdHERzAYE1/xkWCiUf8wRIN/GBs0RgUx1gC5ID3udmZ3dm5n5+ppQwPxAj5IkYj4IkGhKIKIKBSwtGCpv29vL22Xe4Y+sDfJlzTdnZ1vfvN9v+8xZxgYzKm/iTtqFRPqsCX1ce54nYNShOrAHn+3bJXgjntXTU3NUCM8bKnu4VLtH7Qg5BHmeP8AoA/ijY0jewCCf36FF45XGiCBtEEWwlKGdQHiqEPBw/WcqwmdnZ1DjBIH5+7lMMG1mHuMS93IZHKqUeaISzkR82OkA9x1HfS5o5z5WPd6HOpmzDvCHFUfMc0L872bTqeHxSx3mi11BHofJXqApeyzpHd7N0CyJqTNaDQ9oixl/meAZAdjbBT0XhTs/ShAWVHRgEgpq0xTTcf7O7FuhynU11I2jKtYQGh8KOUYJrw1GbdR+wDK9IoGJJJKnQnueCPYf7sl1NyKBgRuczoX3hzo34F1j/GEt6zSAamKCjUD6+4hHmFYOxqNjqhYQCi9iMXkxYgw31Aehn1sq+NqUsUCQmOJlGdx6aX8/QuvBXuZUdGAwG3OMB13cYDBMXDK7IoGpLa2djhzk88FGPxrOXpeRQNCqbzlJu/LuIzqoGLP6FYaH4LJ7IA0lypIZn7Dh474xaFQrfjfrnLm++J4lC1m66kj8OU95cwHKe728wgq1ITXwJQaX4bLVCEXuRl7OOhHGsdLGIOretWHAaji6uNJpQJCGWoQehFpvLQx6PocqGIh63HytxYDhBpEdVJejUizI2iBbDIGaZ8D5q+2m8J91ucopSbkElvrS4mDAOCWwO03GyF0yeSSYNuVXOhoD5E6Dh8zISc+G1DxYtC5EQAcPBkQg9Zpc09AHPVLVMqp5FuRCIofx32Yof8IoH6lsBSA1g5QNlmOeltKXV1b2zDcGODh9zcc/RiItbnXAYnF3GsRPh/B3z9mQcgvqhVK1K203GsIxIECJJpOj6BwDfmsVwGB7MVHP4W0lUdk3neQeynz628wsOYYuM7zGd1PuvG8v9dIFZbyMxeJOf0JSszzzsPaL4JHWnqpE18SIK3gjdVMeu/AcmowaRkU2Eq9yBzvbjDtxC394T7U4IEeD2HNXTlCLyWLTQgO7yE3qUFAeBe6f55H59IAYZlLHREX4qrwBqm5QjyDMPV9iGcodC2Ny48m9jEeQ0xTTKfLtZCVtllCr6Muei6d8f6sQjxTCBB0kPSCSESOLqSV8BssIeSR5CA63U+FU1+hobU+B4f1AtY62P3iCZEvgYgzvlAPpM62L4HObu6bPe/P3IAIVyGDoy70ENtOzjSFZ+Mjf0Ha8fxb8tt43DufnqP1NptnE5vASkzbXchY6TVFucPC3QrASHY/QJD6Oi5lNVmGlPWTESUXIWXYQZkrz6QN71MiBlCGRi33SszfXEqUIfkbG78tEomcZiXU3GyeH3YnoMlMLByRcjTda8BXu4hN6NXw2+v6AowaVKgmXb8KkHiXdewGIPPJLeAuNwKADTn2Ra79A3S/gVqFlvCe8j2hGCCENFmHUCm6t/iJ0uA8OchRJt35lmWNhXKP+1Gm6/kBJtxGZrvIalW0N4Wy5QwP+MTZGRzWRr8NgBYgnlsFiLMduq5Zvty6APnWNJBuc3FAwMzxeHwkTvzV7j6aR75kyGxN5VeMGwfqfhaHmIqiN8Od5N3QeWeRXwDsZULfyTk/15Lqix4BISju2kOT3kpRSMsQT+EEzQ+/alY8LqbAmtYWz2z7RFqxdsI05WRmuU90663kkxa8P6++vv5sgKdCgDQRIE0hjsgCUkeLFUF7C/KOmZzranbid/oNEByMIj4D+T8KnQ4Uef+A7XjPMNYwCl6wqifH6NeMuPCm+IwtvW3kQ8zWb/qASP0kxeUitYwrhL4MgKCNpz/BB7fzTIHVfyK9rX4FjnLeJ1Tp50b5dMaBqe3EjyDgcQBP+3t2PNRtegF14QuENmssldU5XCorf5iW+wBVxcYpMiwrNRYc+ApV5Hl0PsRtd3GP34OUM2CGVwDF1UC+LcQduyhssYaGUcYpNlbY9kXk9tD7cCh6tsB6ltIl90ktQBlnUFq/DuRr4X9PL0fS9eAAlvul3NsKUAEO7SXovAQk+jIooDrnb8pC4z+rBdYxTiXF9wAAAABJRU5ErkJggg=="
                                                                         alt=""></div> <span data-v-667f0e36=""
-                                                                    class="tgg_sider_text">客车 </span>
+                                                                    class="tgg_sider_text style_title_active">客车 </span>
                                                             </div>
                                                         </div>
                                                     </li>
@@ -505,76 +505,78 @@ if($_SESSION['user_id'] ==''){
                                                 <!--  onclick="javascript:alert('开发中')" --> 
                                                     <div data-v-63f17d6e="" class="styleone_top_listbox">
                                                         <div data-v-63f17d6e="" class="styleone_top_list">
-                                                            <ul data-v-63f17d6e="" class="styleone_list_item">
-                                                                <li  onclick="location.href='./practice.php?id=1&name=科目一必考题一&veh=1&color=333&course=1'"  data-v-63f17d6e="" id="color_0"
-                                                                    class="styleone_paper orange_bg"
-                                                                    style="cursor: pointer;"><span
-                                                                        data-v-63f17d6e="" onclick="location.href='./practice.php?id=1&name=科目一必考题一&veh=1&color=333&course=1'">科目一必考题一</span></li>
-                                                                <li   onclick="location.href='./practice.php?id=1&name=科目一必考题二&veh=1&color=333&course=1'" data-v-63f17d6e="" id="color_0"
-                                                                    class="styleone_paper orange_bg"
-                                                                    style="cursor: pointer;" onclick="location.href='./practice.php?id=1&name=科目一必考题二&veh=1&color=333&course=1'" ><span
-                                                                        data-v-63f17d6e="">科目一必考题二</span></li>
-                                                                <li   onclick="location.href='./practice.php?id=1&name=科目一必考题三&veh=1&color=333&course=1'" data-v-63f17d6e="" id="color_0"
-                                                                    class="styleone_paper orange_bg"
-                                                                    style="cursor: pointer;"  onclick="location.href='./practice.php?id=1&name=科目一必考题三&veh=1&color=333&course=1'"  ><span
-                                                                        data-v-63f17d6e="">科目一必考题三</span></li>
-                                                                <li  onclick="location.href='./practice.php?id=1&name=科目一必考题四&veh=1&color=333&course=1'" data-v-63f17d6e="" id="color_0"
-                                                                    class="styleone_paper orange_bg"
-                                                                    style="cursor: pointer;"><span
-                                                                        data-v-63f17d6e=""  onclick="location.href='./practice.php?id=1&name=科目一必考题四&veh=1&color=333&course=1'" >科目一必考题四</span></li>
-                                                                <li  onclick="location.href='./practice.php?id=1&name=科目一必考题五&veh=1&color=333&course=1'" data-v-63f17d6e="" id="color_0"
-                                                                    class="styleone_paper orange_bg"
-                                                                    style="cursor: pointer;"  onclick="location.href='./practice.php?id=1&name=科目一必考题五&veh=1&color=333&course=1'" ><span
-                                                                        data-v-63f17d6e="">科目一必考题五</span></li>
-                                                                <li   onclick="location.href='./practice.php?id=1&name=科目一必考题六&veh=1&color=333&course=1'" data-v-63f17d6e="" id="color_0"
-                                                                    class="styleone_paper orange_bg"
-                                                                    style="cursor: pointer;"  onclick="location.href='./practice.php?id=1&name=科目一必考题六&veh=1&color=333&course=1'" ><span
-                                                                        data-v-63f17d6e="">科目一必考题六</span></li>
-                                                            </ul>
-                                                            <ul onclick="location.href='./practice.php?id=1&name=科目一强化试题一&veh=1&color=333&course=1'" data-v-63f17d6e="" class="styleone_list_item">
-                                                                <li data-v-63f17d6e="" id="color_1"
-                                                                    class="styleone_paper orange_bg"
-                                                                    style="cursor: pointer;"><span
-                                                                        data-v-63f17d6e=""  onclick="location.href='./practice.php?id=1&name=科目一强化试题一&veh=1&color=333&course=1'" >科目一强化试题一</span></li>
-                                                                <li data-v-63f17d6e="" id="color_1"
-                                                                    class="styleone_paper orange_bg"
-                                                                    style="cursor: pointer;" onclick="location.href='./practice.php?id=1&name=科目一强化试题二&veh=1&color=333&course=1'"><span
-                                                                        data-v-63f17d6e="">科目一强化试题二</span></li>
-                                                                <li data-v-63f17d6e="" id="color_1"
-                                                                    class="styleone_paper orange_bg"
-                                                                    style="cursor: pointer;"  onclick="location.href='./practice.php?id=1&name=科目一强化试题三&veh=1&color=333&course=1'"><span
-                                                                        data-v-63f17d6e="">科目一强化试题三</span></li>
-                                                                <li data-v-63f17d6e="" id="color_1"
-                                                                    class="styleone_paper orange_bg"
-                                                                    style="cursor: pointer;"><span
-                                                                        data-v-63f17d6e="" onclick="location.href='./practice.php?id=1&name=科目一强化试题四&veh=1&color=333&course=1'">科目一强化试题四</span></li>
-                                                                <li data-v-63f17d6e="" id="color_1"
-                                                                    class="styleone_paper orange_bg"
-                                                                    style="cursor: pointer;" onclick="location.href='./practice.php?id=1&name=科目一强化试题五&veh=1&color=333&course=1'"><span
-                                                                        data-v-63f17d6e="">科目一强化试题五</span></li>
-                                                            </ul>
-                                                            <ul data-v-63f17d6e="" class="styleone_list_item">
-                                                                <li data-v-63f17d6e="" id="color_2"
-                                                                    class="styleone_paper orange_bg"
-                                                                    style="cursor: pointer;" onclick="location.href='./practice.php?id=1&name=科目一选做题一&veh=1&color=333&course=1'"><span
-                                                                        data-v-63f17d6e="">科目一选做题一</span></li>
-                                                                <li data-v-63f17d6e="" id="color_2"
-                                                                    class="styleone_paper orange_bg"
-                                                                    style="cursor: pointer;"  onclick="location.href='./choose.php?id=1&name=科目一选做题二&veh=1&color=333&course=1'"><span
-                                                                        data-v-63f17d6e="">科目一选做题二</span></li>
-                                                                <li data-v-63f17d6e="" id="color_2"
-                                                                    class="styleone_paper orange_bg"
-                                                                    style="cursor: pointer;"  onclick="location.href='./choose.php?id=1&name=科目一选做题三&veh=1&color=333&course=1'"><span
-                                                                        data-v-63f17d6e="">科目一选做题三</span></li>
-                                                                <li data-v-63f17d6e="" id="color_2"
-                                                                    class="styleone_paper orange_bg"
-                                                                    style="cursor: pointer;" onclick="location.href='./choose.php?id=1&name=科目一选做题四&veh=1&color=333&course=1'"><span
-                                                                        data-v-63f17d6e="">科目一选做题四</span></li>
-                                                                <li data-v-63f17d6e="" id="color_2"
-                                                                    class="styleone_paper orange_bg"
-                                                                    style="cursor: pointer;" onclick="location.href='./choose.php?id=1&name=科目一选做题五&veh=1&color=333&course=1'"><span
-                                                                        data-v-63f17d6e="">科目一选做题五</span></li>
-                                                            </ul>
+                                                            <!--<ul data-v-63f17d6e="" class="styleone_list_item">-->
+                                                            <!--    <li data-v-63f17d6e="" id="color_0"-->
+                                                            <!--        class="styleone_paper orange_bg"-->
+                                                            <!--        style="cursor: pointer;"><span-->
+                                                            <!--            data-v-63f17d6e="" onclick="location.href='./practice.php?id=1&name=科目一必考题一&veh=1&color=333&course=1'">科目一必考题一</span></li>-->
+                                                            <!--    <li data-v-63f17d6e="" id="color_0"-->
+                                                            <!--        class="styleone_paper orange_bg"-->
+                                                            <!--        style="cursor: pointer;" onclick="location.href='./practice.php?id=1&name=科目一必考题二&veh=1&color=333&course=1'" ><span-->
+                                                            <!--            data-v-63f17d6e="">科目一必考题二</span></li>-->
+                                                            <!--    <li data-v-63f17d6e="" id="color_0"-->
+                                                            <!--        class="styleone_paper orange_bg"-->
+                                                            <!--        style="cursor: pointer;"  onclick="location.href='./practice.php?id=1&name=科目一必考题二&veh=1&color=333&course=1'"  ><span-->
+                                                            <!--            data-v-63f17d6e="">科目一必考题三</span></li>-->
+                                                            <!--    <li data-v-63f17d6e="" id="color_0"-->
+                                                            <!--        class="styleone_paper orange_bg"-->
+                                                            <!--        style="cursor: pointer;"><span-->
+                                                            <!--            data-v-63f17d6e=""  onclick="location.href='./practice.php?id=1&name=科目一必考题四&veh=1&color=333&course=1'" >科目一必考题四</span></li>-->
+                                                            <!--    <li data-v-63f17d6e="" id="color_0"-->
+                                                            <!--        class="styleone_paper orange_bg"-->
+                                                            <!--        style="cursor: pointer;"  onclick="location.href='./practice.php?id=1&name=科目一必考题五&veh=1&color=333&course=1'" ><span-->
+                                                            <!--            data-v-63f17d6e="">科目一必考题五</span></li>-->
+                                                            <!--    <li data-v-63f17d6e="" id="color_0"-->
+                                                            <!--        class="styleone_paper orange_bg"-->
+                                                            <!--        style="cursor: pointer;"  onclick="location.href='./practice.php?id=1&name=科目一必考题六&veh=1&color=333&course=1'" ><span-->
+                                                            <!--            data-v-63f17d6e="">科目一必考题六</span></li>-->
+                                                            <!--</ul>-->
+                                                            <!--<ul data-v-63f17d6e="" class="styleone_list_item">-->
+                                                            <!--    <li data-v-63f17d6e="" id="color_1"-->
+                                                            <!--        class="styleone_paper orange_bg"-->
+                                                            <!--        style="cursor: pointer;"><span-->
+                                                            <!--            data-v-63f17d6e=""  onclick="location.href='./strengthen.php?id=1&name=科目一强化试题一&veh=1&color=333&course=1'" >科目一强化试题一</span></li>-->
+                                                            <!--    <li data-v-63f17d6e="" id="color_1"-->
+                                                            <!--        class="styleone_paper orange_bg"-->
+                                                            <!--        style="cursor: pointer;" onclick="location.href='./strengthen.php?id=1&name=科目一强化试题二&veh=1&color=333&course=1'"><span-->
+                                                            <!--            data-v-63f17d6e="">科目一强化试题二</span></li>-->
+                                                            <!--    <li data-v-63f17d6e="" id="color_1"-->
+                                                            <!--        class="styleone_paper orange_bg"-->
+                                                            <!--        style="cursor: pointer;"  onclick="location.href='./strengthen.php?id=1&name=科目一强化试题三&veh=1&color=333&course=1'"><span-->
+                                                            <!--            data-v-63f17d6e="">科目一强化试题三</span></li>-->
+                                                            <!--    <li data-v-63f17d6e="" id="color_1"-->
+                                                            <!--        class="styleone_paper orange_bg"-->
+                                                            <!--        style="cursor: pointer;"><span-->
+                                                            <!--            data-v-63f17d6e="" onclick="location.href='./strengthen.php?id=1&name=科目一强化试题四&veh=1&color=333&course=1'">科目一强化试题四</span></li>-->
+                                                            <!--    <li data-v-63f17d6e="" id="color_1"-->
+                                                            <!--        class="styleone_paper orange_bg"-->
+                                                            <!--        style="cursor: pointer;" onclick="location.href='./strengthen.php?id=1&name=科目一强化试题五&veh=1&color=333&course=1'"><span-->
+                                                            <!--            data-v-63f17d6e="">科目一强化试题五</span></li>-->
+                                                            <!--</ul>-->
+                                                            <!--<ul data-v-63f17d6e="" class="styleone_list_item">-->
+                                                            <!--    <li data-v-63f17d6e="" id="color_2"-->
+                                                            <!--        class="styleone_paper orange_bg"-->
+                                                            <!--        style="cursor: pointer;" onclick="location.href='./choose.php?id=1&name=科目一选做题一&veh=1&color=333&course=1'"><span-->
+                                                            <!--            data-v-63f17d6e="">科目一选做题一</span></li>-->
+                                                            <!--    <li data-v-63f17d6e="" id="color_2"-->
+                                                            <!--        class="styleone_paper orange_bg"-->
+                                                            <!--        style="cursor: pointer;"  onclick="location.href='./choose.php?id=1&name=科目一选做题二&veh=1&color=333&course=1'"><span-->
+                                                            <!--            data-v-63f17d6e="">科目一选做题二</span></li>-->
+                                                            <!--    <li data-v-63f17d6e="" id="color_2"-->
+                                                            <!--        class="styleone_paper orange_bg"-->
+                                                            <!--        style="cursor: pointer;"  onclick="location.href='./choose.php?id=1&name=科目一选做题三&veh=1&color=333&course=1'"><span-->
+                                                            <!--            data-v-63f17d6e="">科目一选做题三</span></li>-->
+                                                            <!--    <li data-v-63f17d6e="" id="color_2"-->
+                                                            <!--        class="styleone_paper orange_bg"-->
+                                                            <!--        style="cursor: pointer;" onclick="location.href='./choose.php?id=1&name=科目一选做题四&veh=1&color=333&course=1'"><span-->
+                                                            <!--            data-v-63f17d6e="">科目一选做题四</span></li>-->
+                                                            <!--    <li data-v-63f17d6e="" id="color_2"-->
+                                                            <!--        class="styleone_paper orange_bg"-->
+                                                            <!--        style="cursor: pointer;" onclick="location.href='./choose.php?id=1&name=科目一选做题五&veh=1&color=333&course=1'"><span-->
+                                                            <!--            data-v-63f17d6e="">科目一选做题五</span></li>-->
+                                                            <!--</ul>-->
+                                                            
+                                                            <h1> 即将添加 </h1>
                                                         </div>
                                                     </div>
                                                 </div>

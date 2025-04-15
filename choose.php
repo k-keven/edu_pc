@@ -16,7 +16,9 @@ if (empty($_REQUEST['name'])) {
 }
 $sql = "select * from tests where 1 ";
 
-$sql .= " and tips ='" . trim($_REQUEST['name']) . "' ";
+//$sql .= " and strengthen_name ='" . trim($_REQUEST['name']) . "' ";
+
+$sql .=" limit 0,100";
 $result = mysqli_query($link, $sql);
 
 $i = 1;
@@ -306,7 +308,7 @@ EOF;
                                     <div data-v-69824944="" style="margin-top: 15px;"><span data-v-69824944="" style="font-weight: bold; text-align: center;">考试车型：</span>  <?php echo $cur['cate_name']; ?>
                                     </div> <!---->
                                     <div data-v-69824944="" style="margin-top: 15px;">
-                                      <div data-v-69824944=""><span data-v-69824944="" style="font-weight: bold;">科　　目：</span><?php echo $cur['tips']; ?> 
+                                      <div data-v-69824944=""><span data-v-69824944="" style="font-weight: bold;">科　　目：</span> 选做题
                                       </div>
                                     </div>
                                     <div data-v-69824944="" style="margin-top: 15px;"><span data-v-69824944="" style="font-weight: bold;">申请原因：</span> <?php echo $cur['suject']; ?>
@@ -350,7 +352,7 @@ EOF;
                                   </div>
                                 </div>
                                 <div data-v-32239fca="" class="sub-answer-wrap">
-                                  <div data-v-32239fca="" class="sub-answer" style="width:100%; color: rgb(51, 51, 51);">
+                                  <div data-v-32239fca="" class="sub-answer" style="color: rgb(51, 51, 51);">
                                       
                                      <?php if($cur['type'] =='1') :?>  
                                          <?php if($cur['ex1'] !='') :?>
@@ -437,17 +439,7 @@ EOF;
                                     <?php  endif; ?>
                                     
                                     
-                                  </div> <!-- 图片 ？ -->
-                                  <div> 
-                                                                    <?php if($cur['question_img'] !='') :?>
-
-                                                             <div data-v-2ef02a07="" class="el-image sub-img"><img src="https://images.halou68.com/<?=$cur['question_img']?>" class="el-image__inner el-image__preview" style="object-fit: scale-down;"><div tabindex="-1" class="el-image-viewer__wrapper" style="z-index: 2000; display: none;"><div class="el-image-viewer__mask"></div><span class="el-image-viewer__btn el-image-viewer__close"><i class="el-icon-circle-close"></i></span><!----><div class="el-image-viewer__btn el-image-viewer__actions"><div class="el-image-viewer__actions__inner"><i class="el-icon-zoom-out"></i><i class="el-icon-zoom-in"></i><i class="el-image-viewer__actions__divider"></i><i class="el-icon-full-screen"></i><i class="el-image-viewer__actions__divider"></i><i class="el-icon-refresh-left"></i><i class="el-icon-refresh-right"></i></div></div><div class="el-image-viewer__canvas"><img src="http://video.ikaos.com.cn//uploads/new/K1Z2.S040.JPG" class="el-image-viewer__img" style="transform: scale(0.805) rotate(0deg); margin-left: 0px; margin-top: 0px; max-height: 100%; max-width: 100%;"></div></div></div>
-                                                             
-                                                             
-                                    <?php endif;  ?>    
-                                                             </div>
-                                    
-                                                          <!---->
+                                  </div> <!----> <!---->
                                 </div> <span data-v-32239fca=""><span data-v-32239fca="" class="skill-txt font27" style="display: none;" id='skills'>
                                     <span data-v-32239fca="" style="color: rgb(0, 204, 0);">
                                       答题技巧：
@@ -525,20 +517,12 @@ EOF;
                             <div data-v-69824944="" class="collect"><i data-v-69824944="" class="el-icon-star-off collect-active"></i><span data-v-69824944="" class="collect-text">收藏</span></div>
                             <div data-v-69824944=""><span data-v-69824944="" class="record-item" style="display: block; margin-bottom: 2%;"><label data-v-69824944="" class="el-checkbox"><span class="el-checkbox__input"><span class="el-checkbox__inner"></span><input type="checkbox" aria-hidden="false" class="el-checkbox__original" value=""></span><span class="el-checkbox__label">背题模式<!----></span></label></span> <span data-v-69824944="" class="record-item" style="display: block; margin-bottom: 2%;"><label data-v-69824944="" class="el-checkbox"><span class="el-checkbox__input"><span class="el-checkbox__inner"></span><input type="checkbox" aria-hidden="false" class="el-checkbox__original" value=""></span><span class="el-checkbox__label">是否显示正确答案<!----></span></label></span> <span data-v-69824944="" class="record-item" style="display: block;"><label data-v-69824944="" class="el-checkbox"><span class="el-checkbox__input"><span class="el-checkbox__inner"></span><input type="checkbox" aria-hidden="false" class="el-checkbox__original" value=""></span><span class="el-checkbox__label">答对自动下一题<!----></span></label></span></div>
                             <div data-v-69824944="" style="display: flex; align-items: center;">
-                              <div data-v-69824944="" class="record-item" style="width: 300px;"><!----> <button data-v-69824944="" type="button" class="el-button el-button--default el-button--large" style="width: 120px; background: none; border: 0px solid rgb(241, 244, 236);"><!----><!----><!----></button> <button data-v-69824944="" type="button" class="el-button el-button--default el-button--large" style="width: 120px; height: 50px; font-size: 23px;"><!----><!----><span onclick="next('<?=$cur["tips"]?>')">下一题</span></button></div> <button data-v-69824944="" type="button" class="el-button el-button--default el-button--large record-item" style="width: 120px; height: 50px; font-size: 22px;"><!----><!----><span onclick="end_exam()">结束</span></button>
+                              <div data-v-69824944="" class="record-item" style="width: 300px;"><!----> <button data-v-69824944="" type="button" class="el-button el-button--default el-button--large" style="width: 120px; background: none; border: 0px solid rgb(241, 244, 236);"><!----><!----><!----></button> <button data-v-69824944="" type="button" class="el-button el-button--default el-button--large" style="width: 120px; height: 50px; font-size: 23px;"><!----><!----><span onclick="next('<?=$cur["strengthen_name"]?>')">下一题</span></button></div> <button data-v-69824944="" type="button" class="el-button el-button--default el-button--large record-item" style="width: 120px; height: 50px; font-size: 22px;"><!----><!----><span onclick="end_exam()">结束</span></button>
                             </div>
                           </div>
                         </div>
                         <div data-v-69824944="" class="tgg_bottom_option_default">
-                          <div data-v-69824944="" class="sub-img-box" style="flex-shrink: 0;"><!---->
-                           
-                           
-
-                           
-                           
-                          
-                          
-                          </div> <!----> <!----> <!---->
+                          <div data-v-69824944="" class="sub-img-box" style="flex-shrink: 0;"><!----></div> <!----> <!----> <!---->
                         </div> <!---->
                         <div data-v-69824944="" class="el-dialog__wrapper" style="display: none;">
                           <div role="dialog" aria-modal="true" aria-label="技巧讲解" class="el-dialog" style="margin-top: 15vh;">
@@ -617,7 +601,7 @@ EOF;
           }
           var ne = cur*1+1;
           
-          location.href='practice.php?id=1&name='+e+'&veh=1&color=333&course='+ne; 
+          location.href='choose.php?id=1&name='+e+'&veh=1&color=333&course='+ne; 
           
       }
       
@@ -644,7 +628,7 @@ EOF;
    
            // $('#table td').removeClass('selected');
            // $(this).addClass('selected');
-           location.href="practice.php?id=1&name=<?php echo $cur['tips'];?>&veh=1&color=333&course="+value; 
+           location.href="strengthen.php?id=1&name=<?php echo $cur['strengthen_name'];?>&veh=1&color=333&course="+value; 
         },
         // 双击事件
         dblclick: function() {
