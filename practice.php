@@ -20,7 +20,7 @@ $sql .= " and tips ='" . trim($_REQUEST['name']) . "' ";
 $result = mysqli_query($link, $sql);
 
 $i = 1;
-while ($r = mysqli_fetch_array($result)) {
+while ($r = mysqli_fetch_assoc($result)) {
   $lists[$i] = $r;
   $i++;
 }
@@ -32,104 +32,12 @@ if (empty($_REQUEST['course']) || $_REQUEST['course'] <= 0) {
 }
 
 
-if(empty($lists[$course]) || count($lists)<=0 ) {
-    
-    include('s.php');
-    die(); 
-    echo  <<<EOF
-<!DOCTYPE html>
-<html>
-<head>
-    <title>提示页面</title>
-    <style>
-        .empty-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f5f5f5;
-            font-family: Arial, sans-serif;
-        }
-        .home-button {
-            background-color: #67C23A;
-            color: white;
-        }
-        .button:hover {
-            opacity: 0.8;
-        }
-        .empty-icon {
-            font-size: 60px;
-            color: #999;
-            margin-bottom: 20px;
-        }
+if (empty($lists[$course]) || count($lists) <= 0) {
 
-        .empty-text {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .refresh-btn {
-            padding: 10px 20px;
-            background-color: #1890ff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .refresh-btn:hover {
-            background-color: #40a9ff;
-        }
-
-        /* 添加简单的动画效果 */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .animated {
-            animation: fadeIn 0.5s ease-out;
-        }
-    </style>
-</head>
-<body>
-    <div class="empty-container">
-        <div class="empty-icon animated">
-            📭
-        </div>
-        <div class="empty-text animated">
-            没有更多数据，请提示管理员增加
-        </div>
-        <button class="refresh-btn animated" onclick="window.history.go(-1)">
-            返回上一页 
-        </button>
-                   <button class="button home-button" onclick="window.location.href='index.php'">回到首页</button>
-
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            // 可以在这里添加额外的交互效果
-            $('.refresh-btn').hover(
-                function() {
-                    $(this).find('.empty-icon').css('transform', 'scale(1.1)');
-                },
-                function() {
-                    $(this).find('.empty-icon').css('transform', 'scale(1)');
-                }
-            );
-        });
-    </script>
-</body>
-</html>
-EOF;
-    die(); 
+  include('s.php');
+  die();
 } else {
-    $cur = $lists[$course];
+  $cur = $lists[$course];
 }
 // print_r($cur);
 
@@ -154,49 +62,61 @@ EOF;
   <meta name="google" content="notranslate">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
   <title>理论速成-哈喽交规</title>
   <style></style>
-  <link href="https://pc.ikaos.com.cn/static/css/app.38fbcbf8a21b41059f293755a46bdf8c.css" rel="stylesheet">
-    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link href="css/my.css" rel="stylesheet">
+  <script src="./js/jquery-3.7.1.js"></script>
 
-  <!--<script type="text/javascript" charset="utf-8" async="" src="./static/js/6_0e899817202a0f46c7b5.js"></script>-->
-  <!--<script type="text/javascript" charset="utf-8" async="" src="./static/js/1_da3deda24d76a1601f63.js"></script>-->
-  <!--<script type="text/javascript" charset="utf-8" async="" src="./static/js/0_d79a64e3611c2ba788ea.js"></script>-->
-  <!--<script type="text/javascript" charset="utf-8" async="" src="./static/js/3_2641dbb3bda9b78fafb8.js"></script>-->
-  <!--<script type="text/javascript" charset="utf-8" async="" src="./static/js/2_e13978f0d05f760cdd6a.js"></script>-->
-  
-    <style>
-        #table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        #table th, #table td {
-            border: 1px solid #000;
-            /*padding: 8px;*/
-            text-align: center;
-        }
-        .header {
-            background-color: #a8d1ff;
-        }
-        
-                /* 添加选中效果的CSS */
-        #table td.selected {
-            background-color: #ffeb3b;  /* 选中后的背景色为黄色 */
-            font-weight: bold;          /* 选中后文字加粗 */
-        }
-        /* 鼠标悬停效果 */
-        #table td:not(.header):hover {
-            background-color: #f5f5f5;  /* 悬停时的背景色为浅灰色 */
-            cursor: pointer;            /* 鼠标变为手型 */
-            transition: background-color 0.3s;  /* 添加过渡效果 */
-        }
-        
-        
-    </style>
-    
-    
-    
+  <script src="./js/global.js"></script>
+
+
+  <script>
+    var tmp = '<?php echo json_encode($lists); ?>';
+    var cur = '<?php echo json_encode($cur) ?>';
+
+    var curjson = JSON.parse(cur);
+
+    var lists = JSON.parse(tmp);
+  </script>
+  <style>
+    #table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #table th,
+    #table td {
+      border: 1px solid #000;
+      /*padding: 8px;*/
+      text-align: center;
+    }
+
+    .header {
+      background-color: #a8d1ff;
+    }
+
+    /* 添加选中效果的CSS */
+    #table td.selected {
+      background-color: #ffeb3b;
+      /* 选中后的背景色为黄色 */
+      font-weight: bold;
+      /* 选中后文字加粗 */
+    }
+
+    /* 鼠标悬停效果 */
+    #table td:not(.header):hover {
+      background-color: #f5f5f5;
+      /* 悬停时的背景色为浅灰色 */
+      cursor: pointer;
+      /* 鼠标变为手型 */
+      transition: background-color 0.3s;
+      /* 添加过渡效果 */
+    }
+  </style>
+
+
+
 </head>
 
 <body ondragstart="return false" oncontextmenu="return false" onselectstart="return false" style="font-size: 12px;" class="">
@@ -215,14 +135,18 @@ EOF;
                   <div data-v-14e2f3dc="" class="style_one_header style_one_header_fiexd">
                     <div data-v-14e2f3dc="" class="style_one_headerlt">
                       <div data-v-14e2f3dc="" class="style_one_logo" style="margin-top: 0px;">
-                        <div data-v-14e2f3dc="" class="logo"><img data-v-14e2f3dc="" src="logo333.png" class="logo zuo_logo"></div>
+                        <div data-v-14e2f3dc="" class="logo">
+
+
+
+                        </div>
                       </div>
                     </div>
                     <div data-v-14e2f3dc="" class="style_one_headerrt">
                       <div data-v-14e2f3dc="" class="style_one_headerrtbox">
                         <div data-v-14e2f3dc="" style="display: flex; align-items: center; cursor: pointer;"><img data-v-14e2f3dc="" src="data:image/png;base64,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" class="list" style="height: 30px; margin-top: 3px;" onclick="location.href='index.php'"></div>
                         <div data-v-14e2f3dc="" class="style_one_headericons">
-                          哈喽交规祝您早日拿证,加盟电话18718889289
+                          哈喽交规 , 加盟电话 18202058117
                         </div>
                         <div data-v-14e2f3dc="" class="style_one_headeruser">
                           <div data-v-14e2f3dc="" class="user-info"><span data-v-14e2f3dc="" class="user_name" style="margin-right: 30px;"> 202304178</span> <img data-v-14e2f3dc="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACkAAAAtCAMAAAAEL7LSAAAAAXNSR0IArs4c6QAAAeBQTFRFAAAA////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////YHepkwAAAJ90Uk5TAAECAwQHCAsNDxETFBUWFxkaHB4fICEiJSYnKy4wMTI1Nj0+QEFFRkdJS0xPUVJUVVdYW15fYWJjamxtbm9yc3Z3eHt8fX5/gIKDhIaIjI6Rk5WXmJmam52eoKKmp6iqq6ytsbKztba3uLy9vr/AwsPExcbHyMnKy8zOz9DR0tPU19jZ2tvc3d7f4OHi4+Tl5ufp6uzt7u/w8vP09fb3ar3ntAAAAhVJREFUOMvN1NdXE1EQwOERNIK9Y6XYjR1BUTR27IAdFFBRBCViEAXBKAoICZuKYjS5y+9f9SEJstnsLo/O09w53zm7d+7cK2KObf7BRTKfWDkMHfOSm6Yg+P/Kjfnkms1m2DzcZpZLhsZu5MJPgMckfZC6Z4QBQJ0wyVaAd3NhL6Cu5vnPtwDt/2AnoDXm3furJKib2dVpBclrFl3q+APxHel8bRR4YdnPb8B4On0KjC+2lGVBUB4RkS0xiO+3OaNLCiIFItIIdNme5nfQK0UWROD3Xlt5Toc3IjvjELCfkA0R0FbIReC2wywNQGKfPIGZI8ahCsMXQ6UBOC8jEC011Av7od5QOapDu/ghtNo4Lq6mW8bCrhA8kyAEihxuQXkURmQQxpxkRRi8EoYfJQ7SnYBu8UG0wkFWAW3SCdN7HOQZ4ILUAY8c5BAkDspu53egJAKT68Q1AfEyW1mtoE9EmoGXtlID/XimreHtNrBWQaBYROR57igbo+AzqMvpJ3gUUncsZQ+gudJ5vYKoxwI+TkGsKrvyAtqpvLApBqn7s8uiADB91+wKu5NA/5xK8QSQ8rtz4MmvAD5DbekUQOL1oWWzpfWVozqQep/7oT4F8Cvira12lx+oOftxUgGoh+Z/qvtJJhLBmUymh2vybXNVi4YxQtcXWvRua8NALKv00AfPcrtpKD32oKWnt6v1yuGcCyt/AeO+FwsCmjUxAAAAAElFTkSuQmCC" alt="" style="width: 30px; height: 30px;"> <!----> <!----></div>
@@ -301,12 +225,12 @@ EOF;
                                 <div data-v-69824944="" class="user-Info"><span data-v-69824944="" class="el-avatar el-avatar--circle" style="height: 60px; width: 60px; line-height: 60px;"><img src="http://pc.ikaos.com.cn/touxiang.png" style="object-fit: cover;"></span></div>
                                 <div data-v-69824944="" class="exam-info-item" style="margin-top: 15px;">
                                   <div data-v-69824944="" class="exam-info-box">
-                                    <div data-v-69824944="" style="margin-top: 15px;"><span data-v-69824944="" style="font-weight: bold;">考生姓名：</span> <?= $_SESSION['username']?> 
+                                    <div data-v-69824944="" style="margin-top: 15px;"><span data-v-69824944="" style="font-weight: bold;">考生姓名：</span> <?= $_SESSION['username'] ?>
                                     </div>
-                                    <div data-v-69824944="" style="margin-top: 15px;"><span data-v-69824944="" style="font-weight: bold; text-align: center;">考试车型：</span>  <?php echo $cur['cate_name']; ?>
+                                    <div data-v-69824944="" style="margin-top: 15px;"><span data-v-69824944="" style="font-weight: bold; text-align: center;">考试车型：</span> <?php echo $cur['cate_name']; ?>
                                     </div> <!---->
                                     <div data-v-69824944="" style="margin-top: 15px;">
-                                      <div data-v-69824944=""><span data-v-69824944="" style="font-weight: bold;">科　　目：</span><?php echo $cur['tips']; ?> 
+                                      <div data-v-69824944=""><span data-v-69824944="" style="font-weight: bold;">科　　目：</span><?php echo $cur['tips']; ?>
                                       </div>
                                     </div>
                                     <div data-v-69824944="" style="margin-top: 15px;"><span data-v-69824944="" style="font-weight: bold;">申请原因：</span> <?php echo $cur['suject']; ?>
@@ -351,108 +275,116 @@ EOF;
                                 </div>
                                 <div data-v-32239fca="" class="sub-answer-wrap">
                                   <div data-v-32239fca="" class="sub-answer" style="width:100%; color: rgb(51, 51, 51);">
-                                      
-                                     <?php if($cur['type'] =='1') :?>  
-                                         <?php if($cur['ex1'] !='') :?>
-                                    <div data-v-32239fca="" id='s1' attr='<?=$cur['ex1']?>' class="sub-answer-item font27">
-                                        <?=$cur['ex1']?>
-                                    </div>
-                                    <?php endif;?> 
-                                    <!--<div data-v-32239fca="" class="sub-answer-item font27">-->
-                                    <!--  B:错误-->
-                                    <!--</div>-->
-                                     
-                                     <?php if($cur['ex2'] !='') :?>
-                                    <div data-v-32239fca="" id='s2' attr='<?=$cur['ex2']?>'  class="sub-answer-item font27">
-                                      <?=$cur['ex2']?>
-                                    </div> 
-                                    <?php endif;?> 
-                                    
-                                    
-                                    <?php  endif; ?>
-                                    <!-- 单选题 --> 
-                                 <?php if($cur['type'] =='2') :?>  
-                                    
-                                    <?php if($cur['ex1'] !='') :?>
-                                    <div data-v-32239fca=""  id='s1' attr='<?=$cur['ex1']?>' class="sub-answer-item font27">
-                                      <?=$cur['ex1']?>
-                                    </div>
-                                    <?php endif;?>  
-                                     
-                                    <?php if($cur['ex2'] !='') :?>
-                                    <div data-v-32239fca="" id='s2' attr='<?=$cur['ex2']?>' class="sub-answer-item font27">
-                                        <?=$cur['ex2']?>
-                                    </div> 
-                                    <?php endif;?> 
-                                    
-                                    
-                                     
-                                    <?php if($cur['ex3'] !='') :?>
-                                    <div data-v-32239fca="" id='s3' attr='<?=$cur['ex3']?>' class="sub-answer-item font27">
-                                      <?=$cur['ex3']?>
-                                    </div> 
-                                    <?php endif;?> 
-                                    
-                                     
-                                    <?php if($cur['ex4'] !='') :?>
-                                    <div data-v-32239fca="" id='s4' attr='<?=$cur['ex4']?>'  class="sub-answer-item font27">
-                                       <?=$cur['ex4']?>
-                                    </div> 
-                                    <?php endif;?> 
-                                    
-                                    
-                                    <?php  endif; ?>
-                                    
-                                    <!-- 多选题 --> 
-  <?php if($cur['type'] =='3') :?>  
-                                    
-                                    <?php if($cur['ex1'] !='') :?>
-                                    <div data-v-32239fca=""  id='s1' attr='<?=$cur['ex1']?>' class="sub-answer-item font27">
-                                      <?=$cur['ex1']?>
-                                    </div>
-                                    <?php endif;?>  
-                                     
-                                    <?php if($cur['ex2'] !='') :?>
-                                    <div data-v-32239fca="" id='s2' attr='<?=$cur['ex2']?>' class="sub-answer-item font27">
-                                       <?=$cur['ex2']?>
-                                    </div> 
-                                    <?php endif;?> 
-                                    
-                                    
-                                     
-                                    <?php if($cur['ex3'] !='') :?>
-                                    <div data-v-32239fca="" id='s3' attr='<?=$cur['ex3']?>' class="sub-answer-item font27">
-                                   <?=$cur['ex3']?>
-                                    </div> 
-                                    <?php endif;?> 
-                                    
-                                     
-                                    <?php if($cur['ex4'] !='') :?>
-                                    <div data-v-32239fca="" id='s4' attr='<?=$cur['ex4']?>'  class="sub-answer-item font27">
-                                      <?=$cur['ex4']?>
-                                    </div> 
-                                    <?php endif;?> 
-                                    
-                                    
-                                    <?php  endif; ?>
-                                    
-                                    
-                                  </div> <!-- 图片 ？ -->
-                                  <div> 
-                                                                    <?php if($cur['question_img'] !='') :?>
 
-                                                             <div data-v-2ef02a07="" class="el-image sub-img"><img src="https://images.halou68.com/<?=$cur['question_img']?>" class="el-image__inner el-image__preview" style="object-fit: scale-down;"><div tabindex="-1" class="el-image-viewer__wrapper" style="z-index: 2000; display: none;"><div class="el-image-viewer__mask"></div><span class="el-image-viewer__btn el-image-viewer__close"><i class="el-icon-circle-close"></i></span><!----><div class="el-image-viewer__btn el-image-viewer__actions"><div class="el-image-viewer__actions__inner"><i class="el-icon-zoom-out"></i><i class="el-icon-zoom-in"></i><i class="el-image-viewer__actions__divider"></i><i class="el-icon-full-screen"></i><i class="el-image-viewer__actions__divider"></i><i class="el-icon-refresh-left"></i><i class="el-icon-refresh-right"></i></div></div><div class="el-image-viewer__canvas"><img src="http://video.ikaos.com.cn//uploads/new/K1Z2.S040.JPG" class="el-image-viewer__img" style="transform: scale(0.805) rotate(0deg); margin-left: 0px; margin-top: 0px; max-height: 100%; max-width: 100%;"></div></div></div>
-                                                             
-                                                             
-                                    <?php endif;  ?>    
-                                                             </div>
-                                    
-                                                          <!---->
+                                    <?php if ($cur['type'] == '1') : ?>
+                                      <?php if ($cur['ex1'] != '') : ?>
+                                        <div data-v-32239fca="" id='s1' attr='<?= $cur['ex1'] ?>' class="sub-answer-item font27">
+                                          A：<?= $cur['ex1'] ?>
+                                        </div>
+                                      <?php endif; ?>
+                                      <!--<div data-v-32239fca="" class="sub-answer-item font27">-->
+                                      <!--  B:错误-->
+                                      <!--</div>-->
+
+                                      <?php if ($cur['ex2'] != '') : ?>
+                                        <div data-v-32239fca="" id='s2' attr='<?= $cur['ex2'] ?>' class="sub-answer-item font27">
+                                          B：<?= $cur['ex2'] ?>
+                                        </div>
+                                      <?php endif; ?>
+
+
+                                    <?php endif; ?>
+                                    <!-- 单选题 -->
+                                    <?php if ($cur['type'] == '2') : ?>
+
+                                      <?php if ($cur['ex1'] != '') : ?>
+                                        <div data-v-32239fca="" id='s1' attr='<?= $cur['ex1'] ?>' class="sub-answer-item font27">
+                                          A：<?= $cur['ex1'] ?>
+                                        </div>
+                                      <?php endif; ?>
+
+                                      <?php if ($cur['ex2'] != '') : ?>
+                                        <div data-v-32239fca="" id='s2' attr='<?= $cur['ex2'] ?>' class="sub-answer-item font27">
+                                          B：<?= $cur['ex2'] ?>
+                                        </div>
+                                      <?php endif; ?>
+
+
+
+                                      <?php if ($cur['ex3'] != '') : ?>
+                                        <div data-v-32239fca="" id='s3' attr='<?= $cur['ex3'] ?>' class="sub-answer-item font27">
+                                          C：<?= $cur['ex3'] ?>
+                                        </div>
+                                      <?php endif; ?>
+
+
+                                      <?php if ($cur['ex4'] != '') : ?>
+                                        <div data-v-32239fca="" id='s4' attr='<?= $cur['ex4'] ?>' class="sub-answer-item font27">
+                                          D：<?= $cur['ex4'] ?>
+                                        </div>
+                                      <?php endif; ?>
+
+
+                                    <?php endif; ?>
+
+                                    <!-- 多选题 -->
+                                    <?php if ($cur['type'] == '3') : ?>
+
+                                      <?php if ($cur['ex1'] != '') : ?>
+                                        <div data-v-32239fca="" id='s1' attr='<?= $cur['ex1'] ?>' class="sub-answer-item font27">
+                                          A：<?= $cur['ex1'] ?>
+                                        </div>
+                                      <?php endif; ?>
+
+                                      <?php if ($cur['ex2'] != '') : ?>
+                                        <div data-v-32239fca="" id='s2' attr='<?= $cur['ex2'] ?>' class="sub-answer-item font27">
+                                          B：<?= $cur['ex2'] ?>
+                                        </div>
+                                      <?php endif; ?>
+
+
+
+                                      <?php if ($cur['ex3'] != '') : ?>
+                                        <div data-v-32239fca="" id='s3' attr='<?= $cur['ex3'] ?>' class="sub-answer-item font27">
+                                          C： <?= $cur['ex3'] ?>
+                                        </div>
+                                      <?php endif; ?>
+
+
+                                      <?php if ($cur['ex4'] != '') : ?>
+                                        <div data-v-32239fca="" id='s4' attr='<?= $cur['ex4'] ?>' class="sub-answer-item font27">
+                                          D： <?= $cur['ex4'] ?>
+                                        </div>
+                                      <?php endif; ?>
+
+
+                                    <?php endif; ?>
+
+
+                                  </div> <!-- 图片 ？ -->
+                                  <div>
+                                    <?php if ($cur['question_img'] != '') : ?>
+
+                                      <div data-v-2ef02a07="" class="el-image sub-img"><img src="https://images.halou68.com/<?= $cur['question_img'] ?>" class="el-image__inner el-image__preview" style="object-fit: scale-down;">
+                                        <div tabindex="-1" class="el-image-viewer__wrapper" style="z-index: 2000; display: none;">
+                                          <div class="el-image-viewer__mask"></div><span class="el-image-viewer__btn el-image-viewer__close"><i class="el-icon-circle-close"></i></span><!---->
+                                          <div class="el-image-viewer__btn el-image-viewer__actions">
+                                            <div class="el-image-viewer__actions__inner"><i class="el-icon-zoom-out"></i><i class="el-icon-zoom-in"></i><i class="el-image-viewer__actions__divider"></i><i class="el-icon-full-screen"></i><i class="el-image-viewer__actions__divider"></i><i class="el-icon-refresh-left"></i><i class="el-icon-refresh-right"></i></div>
+                                          </div>
+                                          <div class="el-image-viewer__canvas"><img src="http://video.ikaos.com.cn//uploads/new/K1Z2.S040.JPG" class="el-image-viewer__img" style="transform: scale(0.805) rotate(0deg); margin-left: 0px; margin-top: 0px; max-height: 100%; max-width: 100%;"></div>
+                                        </div>
+                                      </div>
+
+
+                                    <?php endif;  ?>
+                                  </div>
+
+                                  <!---->
                                 </div> <span data-v-32239fca=""><span data-v-32239fca="" class="skill-txt font27" style="display: none;" id='skills'>
                                     <span data-v-32239fca="" style="color: rgb(0, 204, 0);">
                                       答题技巧：
                                     </span>
-                                    <span id='skills2'> </span> 
+                                    <span id='skills2'> </span>
                                   </span></span>
                               </div>
                               <div data-v-32239fca="" class="sbuject_answer_tggbox" style="width: 100%;">
@@ -476,39 +408,39 @@ EOF;
                               <div data-v-69824944="" class="tgg_right_options" style="height: 100%;">
                                 <div data-v-69824944="">
 
-<!-- 生成 -->
-<?php
-    echo '<table id="table">';
-    
-    // 表头第一行
-    echo '<tr>';
-    echo '<th class="header">题目</th>';
-    for($i = 1; $i <= 10; $i++) {
-        echo '<th class="header">' . $i . '列</th>';
-    }
-    echo '</tr>';
-    
-    // 生成10行10列的表格内容
-    for($row = 1; $row <= 10; $row++) {
-        echo '<tr>';
-        // 第一列显示行号
-        echo '<td class="header">' . $row . '行</td>';
-        
-        // 生成每行的单元格
-        for($col = 1; $col <= 10; $col++) {
-            $number = ($row - 1) * 10 + $col;
-            if($number == $course) {
-                $s = ' class="selected" ';
-            } else {
-                $s ='';
-            }
-            echo '<td '.$s.'>' . $number . '</td>';
-        }
-        echo '</tr>';
-    }
-    
-    echo '</table>';
-?>
+                                  <!-- 生成 -->
+                                  <?php
+                                  echo '<table id="table">';
+
+                                  // 表头第一行
+                                  echo '<tr>';
+                                  echo '<th class="header">题目</th>';
+                                  for ($i = 1; $i <= 10; $i++) {
+                                    echo '<th class="header">' . $i . '列</th>';
+                                  }
+                                  echo '</tr>';
+
+                                  // 生成10行10列的表格内容
+                                  for ($row = 1; $row <= 10; $row++) {
+                                    echo '<tr>';
+                                    // 第一列显示行号
+                                    echo '<td class="header">' . $row . '行</td>';
+
+                                    // 生成每行的单元格
+                                    for ($col = 1; $col <= 10; $col++) {
+                                      $number = ($row - 1) * 10 + $col;
+                                      if ($number == $course) {
+                                        $s = ' class="selected" ';
+                                      } else {
+                                        $s = '';
+                                      }
+                                      echo '<td ' . $s . '>' . $number . '</td>';
+                                    }
+                                    echo '</tr>';
+                                  }
+
+                                  echo '</table>';
+                                  ?>
 
 
 
@@ -521,23 +453,23 @@ EOF;
                         </div>
                         <div data-v-69824944="" class="operation operation-record" style="flex-shrink: 0; height: 80px;">
                           <div data-v-69824944="" class="exam-operation"><span data-v-69824944="" class="record-item" style="font-size: 20px;">正确率:0.00%</span>
-                            <div data-v-69824944="" class="record-item"><button data-v-69824944="" type="button" class="el-button el-button--primary el-button--small"><!----><!----><span>读题</span></button> <button data-v-69824944="" type="button" class="el-button el-button--success el-button--small"><!----><!----><span onclick="show_skill('<?=$cur['skills']?>')">答题技巧</span></button> <button data-v-69824944="" type="button" class="el-button el-button--warning el-button--small"><!----><!----><span>视频教程</span></button> <!----></div>
+                            <div data-v-69824944="" class="record-item"><button data-v-69824944="" type="button" class="el-button el-button--primary el-button--small"><!----><!----><span>读题</span></button> <button data-v-69824944="" type="button" class="el-button el-button--success el-button--small"><!----><!----><span onclick="show_skill('<?= $cur['skills'] ?>')">答题技巧</span></button> <button data-v-69824944="" type="button" class="el-button el-button--warning el-button--small"><!----><!----><span>视频教程</span></button> <!----></div>
                             <div data-v-69824944="" class="collect"><i data-v-69824944="" class="el-icon-star-off collect-active"></i><span data-v-69824944="" class="collect-text">收藏</span></div>
                             <div data-v-69824944=""><span data-v-69824944="" class="record-item" style="display: block; margin-bottom: 2%;"><label data-v-69824944="" class="el-checkbox"><span class="el-checkbox__input"><span class="el-checkbox__inner"></span><input type="checkbox" aria-hidden="false" class="el-checkbox__original" value=""></span><span class="el-checkbox__label">背题模式<!----></span></label></span> <span data-v-69824944="" class="record-item" style="display: block; margin-bottom: 2%;"><label data-v-69824944="" class="el-checkbox"><span class="el-checkbox__input"><span class="el-checkbox__inner"></span><input type="checkbox" aria-hidden="false" class="el-checkbox__original" value=""></span><span class="el-checkbox__label">是否显示正确答案<!----></span></label></span> <span data-v-69824944="" class="record-item" style="display: block;"><label data-v-69824944="" class="el-checkbox"><span class="el-checkbox__input"><span class="el-checkbox__inner"></span><input type="checkbox" aria-hidden="false" class="el-checkbox__original" value=""></span><span class="el-checkbox__label">答对自动下一题<!----></span></label></span></div>
                             <div data-v-69824944="" style="display: flex; align-items: center;">
-                              <div data-v-69824944="" class="record-item" style="width: 300px;"><!----> <button data-v-69824944="" type="button" class="el-button el-button--default el-button--large" style="width: 120px; background: none; border: 0px solid rgb(241, 244, 236);"><!----><!----><!----></button> <button data-v-69824944="" type="button" class="el-button el-button--default el-button--large" style="width: 120px; height: 50px; font-size: 23px;"><!----><!----><span onclick="next('<?=$cur["tips"]?>')">下一题</span></button></div> <button data-v-69824944="" type="button" class="el-button el-button--default el-button--large record-item" style="width: 120px; height: 50px; font-size: 22px;"><!----><!----><span onclick="end_exam()">结束</span></button>
+                              <div data-v-69824944="" class="record-item" style="width: 300px;"><!----> <button data-v-69824944="" type="button" class="el-button el-button--default el-button--large" style="width: 120px; background: none; border: 0px solid rgb(241, 244, 236);"><!----><!----><!----></button> <button data-v-69824944="" type="button" class="el-button el-button--default el-button--large" style="width: 120px; height: 50px; font-size: 23px;"><!----><!----><span onclick="next('<?= $cur["tips"] ?>')">下一题</span></button></div> <button data-v-69824944="" type="button" class="el-button el-button--default el-button--large record-item" style="width: 120px; height: 50px; font-size: 22px;"><!----><!----><span onclick="end_exam()">结束</span></button>
                             </div>
                           </div>
                         </div>
                         <div data-v-69824944="" class="tgg_bottom_option_default">
                           <div data-v-69824944="" class="sub-img-box" style="flex-shrink: 0;"><!---->
-                           
-                           
 
-                           
-                           
-                          
-                          
+
+
+
+
+
+
                           </div> <!----> <!----> <!---->
                         </div> <!---->
                         <div data-v-69824944="" class="el-dialog__wrapper" style="display: none;">
@@ -573,9 +505,9 @@ EOF;
       <div class="el-scrollbar__thumb" style="transform: translateY(0%);"></div>
     </div>
   </div>
-  <script type="text/javascript" src="./static/js/manifest_5c65e1a2795e5caa624c.js"></script>
-  <script type="text/javascript" src="./static/js/vendor_e738ee143ffc1afbf537.js"></script>
-  <script type="text/javascript" src="./static/js/app_5e726c4be90141cb7bc3.js"></script>
+  <!--<script type="text/javascript" src="./static/js/manifest_5c65e1a2795e5caa624c.js"></script>-->
+  <!--<script type="text/javascript" src="./static/js/vendor_e738ee143ffc1afbf537.js"></script>-->
+  <!--<script type="text/javascript" src="./static/js/app_5e726c4be90141cb7bc3.js"></script>-->
   <div tabindex="-1" role="dialog" aria-modal="true" aria-label="注意" class="el-message-box__wrapper" style="z-index: 3003; display: none;">
     <div class="el-message-box el-message-box--center">
       <div class="el-message-box__header">
@@ -600,60 +532,76 @@ EOF;
     </div>
   </div>
   <script>
-      
-      function show_skill(str) {
-          $("#skills").show();
-          $("#skills2").html(str);
-          
+    function show_skill(str) {
+      $("#skills").show();
+      $("#skills2").html(str);
+
+    }
+
+
+    function next(e) {
+      // alert(e)
+      var cur = '<?= $course ?>';
+      if (cur >= 100) {
+        alert('当前已经是最后一题了');
+        return false;
       }
-      
-      
-      function next(e) {
-         // alert(e)
-          var cur = '<?=$course?>';
-          if(cur >=100) {
-              alert('当前已经是最后一题了');
-              return false;
-          }
-          var ne = cur*1+1;
-          
-          location.href='practice.php?id=1&name='+e+'&veh=1&color=333&course='+ne; 
-          
-      }
-      
-      function end_exam()
-      {
-          alert('交卷完成，本次成绩不保存')
-           var int=self.setInterval(function(){  // 这个方法是说在延迟两秒后执行大括号里的方法
-      location.href='index.php'    // 这个方法是刷新当前页面
-      },1000)  //这里2000代表两秒
-      
-      
-      }
-      $(document).ready(function() {
-    $('#table td:not(.header)').on({
+      var ne = cur * 1 + 1;
+
+      location.href = 'practice.php?id=1&name=' + e + '&veh=1&color=333&course=' + ne;
+
+    }
+
+    function end_exam() {
+      alert('交卷完成，本次成绩不保存')
+      var int = self.setInterval(function() { // 这个方法是说在延迟两秒后执行大括号里的方法
+        location.href = 'index.php' // 这个方法是刷新当前页面
+      }, 1000) //这里2000代表两秒
+
+
+    }
+    $(document).ready(function() {
+      $('#table td:not(.header)').on({
         // 单击事件
         click: function(e) {
-           // console.log(e)
-                   let value = $(this).text();
-        let rowIndex = $(this).parent().index();
-        let colIndex = $(this).index();
-        //console.log(`选中的数字是: ${value}, 位于第${rowIndex}行, 第${colIndex}列`);
-   
-   
-   
-           // $('#table td').removeClass('selected');
-           // $(this).addClass('selected');
-           location.href="practice.php?id=1&name=<?php echo $cur['tips'];?>&veh=1&color=333&course="+value; 
+          // console.log(e)
+          let value = $(this).text();
+          let rowIndex = $(this).parent().index();
+          let colIndex = $(this).index();
+          //console.log(`选中的数字是: ${value}, 位于第${rowIndex}行, 第${colIndex}列`);
+
+
+
+          // $('#table td').removeClass('selected');
+          // $(this).addClass('selected');
+          location.href = "practice.php?id=1&name=<?php echo $cur['tips']; ?>&veh=1&color=333&course=" + value;
         },
         // 双击事件
         dblclick: function() {
           //  alert('你选择了数字: ' + $(this).text());
         }
+      });
+
+
+      createCustomDialog();
+      $.customDialog({
+        title: '注意',
+        content: '倒计时准备，请点击确认开始',
+        onCancel: function() {
+          //console.log('用户取消了操作');
+          window.history.go(-1);
+
+        },
+        onConfirm: function() {
+          console.log('用户确认了操作');
+          // 这里可以添加退出登录的逻辑
+          // location.href = 'logout.php';
+        }
+      });
+
     });
-});
   </script>
-  
+
 </body>
 
 </html>
